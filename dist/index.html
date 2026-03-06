@@ -27,9 +27,9 @@
   </script>
 
   <!-- Vite entry — theme applied immediately inside app.js -->
-  <script type="module" crossorigin src="/assets/main-DyKHGLqj.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="/assets/main-DeAo9YW5.css">
+  <script type="module" crossorigin src="/SolunTek/assets/main-BIHVdGUE.js"></script>
+  <link rel="modulepreload" crossorigin href="/SolunTek/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="/SolunTek/assets/main-B3VajMQy.css">
 </head>
 
 <body>
@@ -112,11 +112,7 @@
           </svg>
         </button>
 
-        <!-- 3. CTA -->
-        <a href="#contact" class="btn btn--primary" data-fr="Demander une consultation"
-          data-en="Request a consultation">
-          Demander une consultation
-        </a>
+
 
         <!-- Hamburger -->
         <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -196,47 +192,300 @@
         </div>
 
         <div class="hero__visual reveal-left">
-          <!-- PLACEHOLDER: Replace with actual isometric network SVG — assets/icons/hero-network-diagram.svg -->
-          <svg class="hero__diagram" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg"
-            aria-label="Schéma réseau">
-            <rect x="200" y="50" width="100" height="160" rx="4" stroke="#4ABAFF" stroke-width="1.5"
-              stroke-dasharray="4 4" />
-            <rect x="210" y="65" width="80" height="12" rx="2" fill="rgba(74,186,255,0.2)" stroke="#4ABAFF"
-              stroke-width="1" />
-            <rect x="210" y="83" width="80" height="12" rx="2" fill="rgba(74,186,255,0.1)" stroke="#4ABAFF"
-              stroke-width="1" />
-            <rect x="210" y="101" width="80" height="12" rx="2" fill="rgba(74,186,255,0.1)" stroke="#4ABAFF"
-              stroke-width="1" />
-            <rect x="210" y="119" width="80" height="12" rx="2" fill="rgba(74,186,255,0.08)" stroke="#4ABAFF"
-              stroke-width="0.8" />
-            <rect x="210" y="137" width="80" height="12" rx="2" fill="rgba(74,186,255,0.06)" stroke="#4ABAFF"
-              stroke-width="0.8" />
-            <circle cx="283" cy="71" r="2" fill="#4ABAFF" />
-            <circle cx="283" cy="89" r="2" fill="#4ABAFF" opacity="0.7" />
-            <circle cx="283" cy="107" r="2" fill="#4ABAFF" opacity="0.5" />
-            <circle cx="80" cy="290" r="20" stroke="#0033FF" stroke-width="1.5" fill="rgba(0,51,255,0.08)" />
-            <circle cx="185" cy="330" r="16" stroke="#0033FF" stroke-width="1.5" fill="rgba(0,51,255,0.08)" />
-            <circle cx="315" cy="325" r="16" stroke="#0033FF" stroke-width="1.5" fill="rgba(0,51,255,0.08)" />
-            <circle cx="420" cy="280" r="20" stroke="#0033FF" stroke-width="1.5" fill="rgba(0,51,255,0.08)" />
-            <text x="80" y="323" fill="rgba(0,51,255,0.4)" font-size="9" text-anchor="middle"
-              font-family="monospace">NODE A</text>
-            <text x="185" y="357" fill="rgba(0,51,255,0.4)" font-size="9" text-anchor="middle"
-              font-family="monospace">NODE B</text>
-            <text x="315" y="352" fill="rgba(0,51,255,0.4)" font-size="9" text-anchor="middle"
-              font-family="monospace">NODE C</text>
-            <text x="420" y="314" fill="rgba(0,51,255,0.4)" font-size="9" text-anchor="middle"
-              font-family="monospace">NODE D</text>
-            <path d="M250 215 L80 275" stroke="#0033FF" stroke-width="1" stroke-dasharray="6 4" class="data-line" />
-            <path d="M250 215 L185 318" stroke="#0033FF" stroke-width="1" stroke-dasharray="6 4" class="data-line" />
-            <path d="M250 215 L315 313" stroke="#0033FF" stroke-width="1" stroke-dasharray="6 4" class="data-line" />
-            <path d="M250 215 L420 264" stroke="#0033FF" stroke-width="1" stroke-dasharray="6 4" class="data-line" />
-            <circle cx="250" cy="205" r="10" fill="#0033FF" />
-            <circle cx="250" cy="205" r="22" stroke="#0033FF" stroke-width="1.5" fill="none" class="pulse-ring" />
-            <circle cx="250" cy="205" r="36" stroke="#0033FF" stroke-width="0.7" fill="none"
-              class="pulse-ring pulse-ring--2" />
-            <rect x="244" y="199" width="12" height="3" rx="0.5" fill="rgba(255,255,255,0.8)" />
-            <rect x="244" y="204" width="12" height="3" rx="0.5" fill="rgba(255,255,255,0.5)" />
+          <svg class="hero__diagram" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="d-centerGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#0033FF" stop-opacity="0.14" />
+                <stop offset="55%" stop-color="#0033FF" stop-opacity="0.04" />
+                <stop offset="100%" stop-color="#0033FF" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="d-coreFill" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#EEF2FF" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.6" />
+              </radialGradient>
+              <linearGradient id="d-scanGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#0033FF" stop-opacity="0" />
+                <stop offset="60%" stop-color="#4ABAFF" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#4ABAFF" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="d-iconGrad" x1="28.76" y1="154.68" x2="104.33" y2="23.8"
+                gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#0600AF" />
+                <stop offset="0.5" stop-color="#0033FF" />
+                <stop offset="1" stop-color="#4ABAFF" />
+              </linearGradient>
+              <filter id="d-glow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="d-iconGlowF" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="7" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="d-cardShadow" x="-25%" y="-25%" width="150%" height="150%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0033FF" flood-opacity="0.12" />
+              </filter>
+              <clipPath id="d-coreClip">
+                <circle cx="260" cy="260" r="175" />
+              </clipPath>
+            </defs>
+
+            <!-- Ambient glow -->
+            <circle cx="260" cy="260" r="230" fill="url(#d-centerGlow)" />
+
+            <!-- Dot grid corners -->
+            <g opacity="0.15" fill="#0033FF">
+              <circle cx="52" cy="52" r="1.3" />
+              <circle cx="80" cy="52" r="1.3" />
+              <circle cx="108" cy="52" r="1.3" />
+              <circle cx="52" cy="80" r="1.3" />
+              <circle cx="80" cy="80" r="1.3" />
+              <circle cx="108" cy="80" r="1.3" />
+              <circle cx="52" cy="108" r="1.3" />
+              <circle cx="80" cy="108" r="1.3" />
+              <circle cx="412" cy="52" r="1.3" />
+              <circle cx="440" cy="52" r="1.3" />
+              <circle cx="468" cy="52" r="1.3" />
+              <circle cx="412" cy="80" r="1.3" />
+              <circle cx="440" cy="80" r="1.3" />
+              <circle cx="468" cy="80" r="1.3" />
+              <circle cx="440" cy="108" r="1.3" />
+              <circle cx="468" cy="108" r="1.3" />
+              <circle cx="52" cy="412" r="1.3" />
+              <circle cx="80" cy="412" r="1.3" />
+              <circle cx="52" cy="440" r="1.3" />
+              <circle cx="80" cy="440" r="1.3" />
+              <circle cx="108" cy="440" r="1.3" />
+              <circle cx="52" cy="468" r="1.3" />
+              <circle cx="80" cy="468" r="1.3" />
+              <circle cx="108" cy="468" r="1.3" />
+              <circle cx="412" cy="440" r="1.3" />
+              <circle cx="440" cy="440" r="1.3" />
+              <circle cx="468" cy="440" r="1.3" />
+              <circle cx="412" cy="468" r="1.3" />
+              <circle cx="440" cy="468" r="1.3" />
+              <circle cx="468" cy="468" r="1.3" />
+            </g>
+
+            <!-- Outer ring -->
+            <g class="d-ring-outer">
+              <circle cx="260" cy="260" r="205" stroke="#0033FF" stroke-width="0.8" stroke-opacity="0.18"
+                stroke-dasharray="4 16" />
+              <g stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" opacity="0.55">
+                <line x1="260" y1="55" x2="260" y2="68" />
+                <line x1="260" y1="452" x2="260" y2="465" />
+                <line x1="55" y1="260" x2="68" y2="260" />
+                <line x1="452" y1="260" x2="465" y2="260" />
+                <line x1="115" y1="115" x2="124" y2="124" />
+                <line x1="405" y1="115" x2="396" y2="124" />
+                <line x1="115" y1="405" x2="124" y2="396" />
+                <line x1="405" y1="405" x2="396" y2="396" />
+              </g>
+              <g filter="url(#d-glow)">
+                <rect width="10" height="10" rx="1.5" fill="#0033FF" transform="translate(255,51) rotate(45 5 5)" />
+                <rect width="10" height="10" rx="1.5" fill="#0033FF" transform="translate(255,459) rotate(45 5 5)" />
+                <rect width="10" height="10" rx="1.5" fill="#4ABAFF" transform="translate(459,255) rotate(45 5 5)" />
+                <rect width="10" height="10" rx="1.5" fill="#4ABAFF" transform="translate(51,255) rotate(45 5 5)" />
+              </g>
+            </g>
+
+            <!-- Middle ring -->
+            <g class="d-ring-mid">
+              <circle cx="260" cy="260" r="158" stroke="#0600AF" stroke-width="1" stroke-opacity="0.45"
+                stroke-dasharray="8 7" />
+              <g filter="url(#d-glow)" opacity="0.85">
+                <rect x="253" y="98" width="14" height="14" rx="2.5" fill="none" stroke="#4ABAFF" stroke-width="1.5" />
+                <rect x="253" y="408" width="14" height="14" rx="2.5" fill="none" stroke="#4ABAFF" stroke-width="1.5" />
+                <rect x="408" y="253" width="14" height="14" rx="2.5" fill="none" stroke="#0033FF" stroke-width="1.5" />
+                <rect x="98" y="253" width="14" height="14" rx="2.5" fill="none" stroke="#0033FF" stroke-width="1.5" />
+              </g>
+            </g>
+
+            <!-- Inner decorative ring -->
+            <circle cx="260" cy="260" r="108" stroke="#4ABAFF" stroke-width="0.75" stroke-opacity="0.2"
+              stroke-dasharray="3 9" />
+
+            <!-- Scanning line -->
+            <g clip-path="url(#d-coreClip)">
+              <line class="d-scan" x1="260" y1="260" x2="260" y2="85" stroke="url(#d-scanGrad)" stroke-width="2"
+                stroke-linecap="round" />
+            </g>
+
+            <!-- Data flow lines -->
+            <line class="d-dash d-dash--1" x1="272" y1="245" x2="364" y2="155" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--2" x1="283" y1="260" x2="400" y2="260" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--3" x1="272" y1="275" x2="364" y2="365" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--4" x1="248" y1="275" x2="156" y2="365" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--5" x1="260" y1="237" x2="260" y2="122" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--6" x1="248" y1="245" x2="156" y2="155" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+
+            <!-- Node 1 — Réseau (top-right) -->
+            <g class="d-node d-node--1" filter="url(#d-cardShadow)">
+              <rect x="354" y="128" width="105" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0033FF"
+                stroke-width="1.2" />
+              <rect x="354" y="128" width="4" height="48" rx="2" fill="#0033FF" />
+              <circle cx="370" cy="152" r="5.5" fill="#0033FF" opacity="0.12" />
+              <circle cx="370" cy="152" r="3" fill="#0033FF" />
+              <text x="381" y="148" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Réseau</text>
+              <text x="381" y="162" fill="#0033FF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Infrastructure</text>
+            </g>
+
+            <!-- Node 2 — CCTV (right) -->
+            <g class="d-node d-node--2" filter="url(#d-cardShadow)">
+              <rect x="408" y="236" width="95" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#4ABAFF"
+                stroke-width="1.2" />
+              <rect x="408" y="236" width="4" height="48" rx="2" fill="#4ABAFF" />
+              <circle cx="424" cy="260" r="5.5" fill="#4ABAFF" opacity="0.12" />
+              <circle cx="424" cy="260" r="3" fill="#4ABAFF" />
+              <text x="435" y="256" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">CCTV</text>
+              <text x="435" y="270" fill="#4ABAFF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Surveillance</text>
+            </g>
+
+            <!-- Node 3 — Alarme (bottom-right) -->
+            <g class="d-node d-node--3" filter="url(#d-cardShadow)">
+              <rect x="354" y="344" width="105" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0033FF"
+                stroke-width="1.2" />
+              <rect x="354" y="344" width="4" height="48" rx="2" fill="#0033FF" />
+              <circle cx="370" cy="368" r="5.5" fill="#0033FF" opacity="0.12" />
+              <circle cx="370" cy="368" r="3" fill="#0033FF" />
+              <text x="381" y="364" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Alarme</text>
+              <text x="381" y="378" fill="#0033FF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Sécurité</text>
+            </g>
+
+            <!-- Node 4 — Contrôle d'accès (bottom-left) -->
+            <g class="d-node d-node--4" filter="url(#d-cardShadow)">
+              <rect x="61" y="344" width="115" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0600AF"
+                stroke-width="1.2" />
+              <rect x="61" y="344" width="4" height="48" rx="2" fill="#0600AF" />
+              <circle cx="77" cy="368" r="5.5" fill="#0600AF" opacity="0.12" />
+              <circle cx="77" cy="368" r="3" fill="#0600AF" />
+              <text x="88" y="364" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Contrôle</text>
+              <text x="88" y="378" fill="#0600AF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">d'accès</text>
+            </g>
+
+            <!-- Node 5 — Informatique (top-center) -->
+            <g class="d-node d-node--5" filter="url(#d-cardShadow)">
+              <rect x="194" y="68" width="132" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#4ABAFF"
+                stroke-width="1.2" />
+              <rect x="194" y="68" width="4" height="48" rx="2" fill="#4ABAFF" />
+              <circle cx="210" cy="92" r="5.5" fill="#4ABAFF" opacity="0.12" />
+              <circle cx="210" cy="92" r="3" fill="#4ABAFF" />
+              <text x="221" y="88" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Informatique</text>
+              <text x="221" y="102" fill="#4ABAFF" font-family="Inter,sans-serif" font-size="7.5" opacity="0.75">Soft
+                &amp; Hardware</text>
+            </g>
+
+            <!-- Node 6 — Bureautique (top-left) -->
+            <g class="d-node d-node--6" filter="url(#d-cardShadow)">
+              <rect x="61" y="128" width="115" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0033FF"
+                stroke-width="1.2" />
+              <rect x="61" y="128" width="4" height="48" rx="2" fill="#0033FF" />
+              <circle cx="77" cy="152" r="5.5" fill="#0033FF" opacity="0.12" />
+              <circle cx="77" cy="152" r="3" fill="#0033FF" />
+              <text x="88" y="148" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Bureautique</text>
+              <text x="88" y="162" fill="#0033FF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Automatisation</text>
+            </g>
+
+            <!-- Core background — light so icon is visible -->
+            <circle cx="260" cy="260" r="82" fill="url(#d-coreFill)" stroke="#0033FF" stroke-width="1"
+              stroke-opacity="0.2" />
+            <circle cx="260" cy="260" r="66" fill="white" fill-opacity="0.75" stroke="#4ABAFF" stroke-width="0.75"
+              stroke-opacity="0.35" />
+
+            <!-- Pulse rings -->
+            <circle cx="260" cy="260" r="46" class="d-pulse d-pulse--1" fill="none" stroke="#0033FF"
+              stroke-width="1.5" />
+            <circle cx="260" cy="260" r="60" class="d-pulse d-pulse--2" fill="none" stroke="#4ABAFF" stroke-width="1" />
+            <circle cx="260" cy="260" r="74" class="d-pulse d-pulse--3" fill="none" stroke="#0033FF"
+              stroke-width="0.5" />
+
+            <!-- Icon glow layer (blurred, behind) -->
+            <g transform="translate(227.9, 221.0) scale(0.3922)" filter="url(#d-iconGlowF)" opacity="0.45">
+              <path
+                d="M31.13,62.94H0v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31V0h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="#4ABAFF" />
+              <path
+                d="M55.98,104.97h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0-.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="#4ABAFF" />
+              <path
+                d="M60.82,136.44h-31.13v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31v-26.84h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="#4ABAFF" />
+              <path
+                d="M85.67,178.47h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0,.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="#4ABAFF" />
+            </g>
+
+            <!-- Icon — sharp visible layer -->
+            <g class="d-icon" transform="translate(227.9, 221.0) scale(0.3922)">
+              <path
+                d="M31.13,62.94H0v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31V0h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="url(#d-iconGrad)" />
+              <path
+                d="M55.98,104.97h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0-.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="url(#d-iconGrad)" />
+              <path
+                d="M60.82,136.44h-31.13v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31v-26.84h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="url(#d-iconGrad)" />
+              <path
+                d="M85.67,178.47h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0-.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="url(#d-iconGrad)" />
+            </g>
+
+            <!-- Corner brackets -->
+            <g stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" opacity="0.3">
+              <path d="M24 50 L24 24 L50 24" />
+              <path d="M470 50 L470 24 L444 24" />
+              <path d="M24 470 L24 496 L50 496" />
+              <path d="M470 470 L470 496 L444 496" />
+            </g>
+
+            <!-- Engineering readout -->
+            <g font-family="'Courier New',monospace" font-size="7.5" fill="#0033FF" fill-opacity="0.4">
+              <text x="32" y="18">SYS.ONLINE</text>
+              <text x="32" y="512">v2.6.0</text>
+              <text x="424" y="512">ALG·DZ</text>
+            </g>
+
+            <!-- Status indicator -->
+            <g transform="translate(32, 488)">
+              <circle r="3.5" fill="#4ABAFF">
+                <animate attributeName="opacity" values="1;0.1;1" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <circle r="8" fill="#4ABAFF" opacity="0.08">
+                <animate attributeName="opacity" values="0.08;0.25;0.08" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <text x="14" y="4" font-family="'Courier New',monospace" font-size="7.5" fill="#4ABAFF"
+                fill-opacity="0.65">SECURE · CONNECTED</text>
+            </g>
+
           </svg>
+        </div>
+
+        <div class="hero__image">
+          <img src="../assets/icons/Logo/V2/SVG/GR2.svg" alt="Hero-image" class="hero-image.svg">
         </div>
       </div>
     </section>
@@ -608,56 +857,21 @@
         </h2>
       </div>
 
-      <div class="partners__grid">
-
-        <!-- Real partner logos -->
-        <div class="partner-card">
-          <div class="partner-card__inner">
-            <img src="/assets/cocreative-NyZgFGJf.svg" alt="Cocreative" loading="lazy">
-          </div>
+      <div class="partners__scroll-wrap">
+        <div class="partners__scroll-track">
+          <!-- Set 1 -->
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20310.88%2038.42'%3e%3cdefs%3e%3cstyle%3e.cls-1{fill:%23f53627;}.cls-2{fill:%23fff;}%3c/style%3e%3c/defs%3e%3ctitle%3eLOGO%3c/title%3e%3cg%20id='Layer_2'%20data-name='Layer%202'%3e%3cg%20id='Layer_1-2'%20data-name='Layer%201'%3e%3cpath%20class='cls-1'%20d='M32.59,32.16l0,0a17.68,17.68,0,0,1-3.79-5.68.52.52,0,0,0-.41-.32.55.55,0,0,0-.48.19l-.06.08a11.16,11.16,0,0,1-8.71,4.22,10.68,10.68,0,0,1-7.9-3.17,11,11,0,0,1-3.13-8.25A11,11,0,0,1,11.2,11a10.7,10.7,0,0,1,7.93-3.16,9.53,9.53,0,0,1,7.72,3.65l.88,1.06a.54.54,0,0,0,.49.18.5.5,0,0,0,.4-.33,17,17,0,0,1,3.79-5.88.51.51,0,0,0,0-.71A17.14,17.14,0,0,0,19.13,0,18.45,18.45,0,0,0,5.48,5.55,18.58,18.58,0,0,0,0,19.2,18.75,18.75,0,0,0,18.29,38.41h.83a19.59,19.59,0,0,0,8.14-1.73A18,18,0,0,0,32.67,33a.52.52,0,0,0,.11-.57A.6.6,0,0,0,32.59,32.16Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-1'%20d='M64.09,5.61A18.24,18.24,0,0,0,50.61,0a18.36,18.36,0,0,0-13.5,5.56L37,5.73l-.14.15a19.29,19.29,0,0,0-2.65,3.5,19.23,19.23,0,0,0-2.52,9.82,19.74,19.74,0,0,0,1.43,7.63,18.84,18.84,0,0,0,1.21,2.42,20.07,20.07,0,0,0,2.75,3.55l.07.06.17.14a18.29,18.29,0,0,0,13,5.42h.36a18.5,18.5,0,0,0,13.48-5.57,18.8,18.8,0,0,0,5.45-13.62A18.83,18.83,0,0,0,64.09,5.61Zm-24.4,13.6A11.29,11.29,0,0,1,42.79,11a10.34,10.34,0,0,1,7.49-3.2h.32A10.19,10.19,0,0,1,58.31,11a11,11,0,0,1,3.14,8.22,11,11,0,0,1-3.09,8.18l0,.05a10.17,10.17,0,0,1-7.73,3.2,10.28,10.28,0,0,1-7.78-3.2A11.28,11.28,0,0,1,39.69,19.21Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M81.29,34.45a15.17,15.17,0,0,1-6.23-6.09,18.13,18.13,0,0,1-2.19-9,18.13,18.13,0,0,1,2.29-9.18A15.78,15.78,0,0,1,81.5,4,19.33,19.33,0,0,1,90.8,1.8,18.27,18.27,0,0,1,97.46,3a18.85,18.85,0,0,1,5.66,3.4L99,11.89a16.19,16.19,0,0,0-4.06-2.45,11.32,11.32,0,0,0-4.26-.79A10.23,10.23,0,0,0,85.45,10,8.92,8.92,0,0,0,82,13.62a11.5,11.5,0,0,0-1.24,5.45A11.83,11.83,0,0,0,82,24.65a9.07,9.07,0,0,0,3.57,3.74,10.35,10.35,0,0,0,5.3,1.33A12.46,12.46,0,0,0,95.18,29a13.83,13.83,0,0,0,4-2.45l4.14,5.52a18,18,0,0,1-5.69,3.38,20.07,20.07,0,0,1-7,1.19A19.61,19.61,0,0,1,81.29,34.45Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M127.69,36.54,118.8,25.07h-3.17V36.54h-8.15V1.77h15.3a14.19,14.19,0,0,1,6.55,1.47,11,11,0,0,1,4.5,4.1,11.37,11.37,0,0,1,1.61,6.05,11.14,11.14,0,0,1-2.11,6.83,11.55,11.55,0,0,1-5.84,4.1l9.89,12.22ZM125.93,9.89a5.59,5.59,0,0,0-4.05-1.36h-6.3V18.76h6.3a5.79,5.79,0,0,0,4.05-1.29,4.74,4.74,0,0,0,1.41-3.68A5.18,5.18,0,0,0,125.93,9.89Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M148.8,22.24v7.51h17.65v6.87H140.89V1.81h25V8.57H148.8v7.11H165v6.56Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M205.94,36.59h-8.79l-2.68-6.36H178.78l-2.63,6.36h-8.54L182.5,1.83h8.59ZM181.36,23.43h10.58l-3.18-8.69q-1.55-4-2-5.56h-.2q-.28,1-2,5.76Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M202.4,1.77h29.1V8.61H220.94V36.47h-8.08V8.61H202.4Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M243.32,36.6h-7.8V1.82h7.8Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M260.68,36.57,247.27,1.85h8.46l5.52,15q1.1,3.07,2.07,6.27c.65,2.14,1.08,3.73,1.31,4.79h.19a90.12,90.12,0,0,1,3.32-11.11l5.52-15h8.28L268.53,36.57Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M293.23,22.24v7.51h17.65v6.86H285.33V1.81h25V8.57H293.23v7.11h16.16v6.56Z'%20transform='translate(0)'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Cocreative" class="partner-logo">
+          <img src="/SolunTek/assets/geoxal-gyfH6Lbr.svg" alt="Geoxal" class="partner-logo">
+          <img src="/SolunTek/assets/geoxpin-DQhCf2DL.svg" alt="Geoxpin" class="partner-logo">
+          <img src="/SolunTek/assets/imkan-CVkpgL8D.svg" alt="Imkan" class="partner-logo">
+          <img src="/SolunTek/assets/pintel-CmDbqU8f.svg" alt="Pintel" class="partner-logo">
+          <!-- Set 2 — exact duplicate for seamless loop -->
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20310.88%2038.42'%3e%3cdefs%3e%3cstyle%3e.cls-1{fill:%23f53627;}.cls-2{fill:%23fff;}%3c/style%3e%3c/defs%3e%3ctitle%3eLOGO%3c/title%3e%3cg%20id='Layer_2'%20data-name='Layer%202'%3e%3cg%20id='Layer_1-2'%20data-name='Layer%201'%3e%3cpath%20class='cls-1'%20d='M32.59,32.16l0,0a17.68,17.68,0,0,1-3.79-5.68.52.52,0,0,0-.41-.32.55.55,0,0,0-.48.19l-.06.08a11.16,11.16,0,0,1-8.71,4.22,10.68,10.68,0,0,1-7.9-3.17,11,11,0,0,1-3.13-8.25A11,11,0,0,1,11.2,11a10.7,10.7,0,0,1,7.93-3.16,9.53,9.53,0,0,1,7.72,3.65l.88,1.06a.54.54,0,0,0,.49.18.5.5,0,0,0,.4-.33,17,17,0,0,1,3.79-5.88.51.51,0,0,0,0-.71A17.14,17.14,0,0,0,19.13,0,18.45,18.45,0,0,0,5.48,5.55,18.58,18.58,0,0,0,0,19.2,18.75,18.75,0,0,0,18.29,38.41h.83a19.59,19.59,0,0,0,8.14-1.73A18,18,0,0,0,32.67,33a.52.52,0,0,0,.11-.57A.6.6,0,0,0,32.59,32.16Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-1'%20d='M64.09,5.61A18.24,18.24,0,0,0,50.61,0a18.36,18.36,0,0,0-13.5,5.56L37,5.73l-.14.15a19.29,19.29,0,0,0-2.65,3.5,19.23,19.23,0,0,0-2.52,9.82,19.74,19.74,0,0,0,1.43,7.63,18.84,18.84,0,0,0,1.21,2.42,20.07,20.07,0,0,0,2.75,3.55l.07.06.17.14a18.29,18.29,0,0,0,13,5.42h.36a18.5,18.5,0,0,0,13.48-5.57,18.8,18.8,0,0,0,5.45-13.62A18.83,18.83,0,0,0,64.09,5.61Zm-24.4,13.6A11.29,11.29,0,0,1,42.79,11a10.34,10.34,0,0,1,7.49-3.2h.32A10.19,10.19,0,0,1,58.31,11a11,11,0,0,1,3.14,8.22,11,11,0,0,1-3.09,8.18l0,.05a10.17,10.17,0,0,1-7.73,3.2,10.28,10.28,0,0,1-7.78-3.2A11.28,11.28,0,0,1,39.69,19.21Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M81.29,34.45a15.17,15.17,0,0,1-6.23-6.09,18.13,18.13,0,0,1-2.19-9,18.13,18.13,0,0,1,2.29-9.18A15.78,15.78,0,0,1,81.5,4,19.33,19.33,0,0,1,90.8,1.8,18.27,18.27,0,0,1,97.46,3a18.85,18.85,0,0,1,5.66,3.4L99,11.89a16.19,16.19,0,0,0-4.06-2.45,11.32,11.32,0,0,0-4.26-.79A10.23,10.23,0,0,0,85.45,10,8.92,8.92,0,0,0,82,13.62a11.5,11.5,0,0,0-1.24,5.45A11.83,11.83,0,0,0,82,24.65a9.07,9.07,0,0,0,3.57,3.74,10.35,10.35,0,0,0,5.3,1.33A12.46,12.46,0,0,0,95.18,29a13.83,13.83,0,0,0,4-2.45l4.14,5.52a18,18,0,0,1-5.69,3.38,20.07,20.07,0,0,1-7,1.19A19.61,19.61,0,0,1,81.29,34.45Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M127.69,36.54,118.8,25.07h-3.17V36.54h-8.15V1.77h15.3a14.19,14.19,0,0,1,6.55,1.47,11,11,0,0,1,4.5,4.1,11.37,11.37,0,0,1,1.61,6.05,11.14,11.14,0,0,1-2.11,6.83,11.55,11.55,0,0,1-5.84,4.1l9.89,12.22ZM125.93,9.89a5.59,5.59,0,0,0-4.05-1.36h-6.3V18.76h6.3a5.79,5.79,0,0,0,4.05-1.29,4.74,4.74,0,0,0,1.41-3.68A5.18,5.18,0,0,0,125.93,9.89Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M148.8,22.24v7.51h17.65v6.87H140.89V1.81h25V8.57H148.8v7.11H165v6.56Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M205.94,36.59h-8.79l-2.68-6.36H178.78l-2.63,6.36h-8.54L182.5,1.83h8.59ZM181.36,23.43h10.58l-3.18-8.69q-1.55-4-2-5.56h-.2q-.28,1-2,5.76Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M202.4,1.77h29.1V8.61H220.94V36.47h-8.08V8.61H202.4Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M243.32,36.6h-7.8V1.82h7.8Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M260.68,36.57,247.27,1.85h8.46l5.52,15q1.1,3.07,2.07,6.27c.65,2.14,1.08,3.73,1.31,4.79h.19a90.12,90.12,0,0,1,3.32-11.11l5.52-15h8.28L268.53,36.57Z'%20transform='translate(0)'%3e%3c/path%3e%3cpath%20class='cls-2'%20d='M293.23,22.24v7.51h17.65v6.86H285.33V1.81h25V8.57H293.23v7.11h16.16v6.56Z'%20transform='translate(0)'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Cocreative" class="partner-logo" aria-hidden="true">
+          <img src="/SolunTek/assets/geoxal-gyfH6Lbr.svg" alt="Geoxal" class="partner-logo" aria-hidden="true">
+          <img src="/SolunTek/assets/geoxpin-DQhCf2DL.svg" alt="Geoxpin" class="partner-logo" aria-hidden="true">
+          <img src="/SolunTek/assets/imkan-CVkpgL8D.svg" alt="Imkan" class="partner-logo" aria-hidden="true">
+          <img src="/SolunTek/assets/pintel-CmDbqU8f.svg" alt="Pintel" class="partner-logo" aria-hidden="true">
         </div>
-
-        <div class="partner-card">
-          <div class="partner-card__inner">
-            <img src="/assets/geoxal-gyfH6Lbr.svg" alt="Geoxal" loading="lazy">
-          </div>
-        </div>
-
-        <div class="partner-card">
-          <div class="partner-card__inner">
-            <img src="/assets/geoxpin-DQhCf2DL.svg" alt="Geoxpin" loading="lazy">
-          </div>
-        </div>
-
-        <div class="partner-card">
-          <div class="partner-card__inner">
-            <img src="/assets/imkan-CVkpgL8D.svg" alt="Imkan" loading="lazy">
-          </div>
-        </div>
-
-        <div class="partner-card">
-          <div class="partner-card__inner">
-            <img src="/assets/pintel-BLOfaBTO.svg" alt="Pintel" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Placeholder slots — replace with <img> when logos are ready -->
-        <div class="partner-card partner-card--placeholder">
-          <div class="partner-card__inner">
-            <span data-fr="Bientôt" data-en="Coming soon">Bientôt</span>
-          </div>
-        </div>
-        <div class="partner-card partner-card--placeholder">
-          <div class="partner-card__inner">
-            <span data-fr="Bientôt" data-en="Coming soon">Bientôt</span>
-          </div>
-        </div>
-        <div class="partner-card partner-card--placeholder">
-          <div class="partner-card__inner">
-            <span data-fr="Bientôt" data-en="Coming soon">Bientôt</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -759,7 +973,7 @@
             </svg>
             <div>
               <div class="contact-info-label" data-fr="Localisation" data-en="Location">Localisation</div>
-              <div class="contact-info-value">Alger, Algérie</div>
+              <div class="contact-info-value">Cite Khalef Ismail, Dar El Beida, Alger, Algérie</div>
             </div>
           </div>
           <div class="contact-info-item">
@@ -778,58 +992,129 @@
        FOOTER (always dark)
   ═══════════════════════════════════════════ -->
   <footer class="footer">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <!-- LOGO PLACEHOLDER (white version on dark footer) -->
-        <!-- Footer is always dark, so we use GR2 (coloured icon, white text) -->
-        <img src="../assets/icons/GR.svg" alt="SolunTek" class="logo-svg">
-        <p data-fr="Providing IT & Digital Solutions." data-en="Providing IT & Digital Solutions.">
-          Providing IT & Digital Solutions.
+
+    <!-- Top separator line -->
+    <div class="footer__separator"></div>
+
+    <div class="container footer__body">
+
+      <!-- Column 1: Brand -->
+      <div class="footer__col footer__col--brand">
+        <!-- Logo -->
+        <a href="#hero" class="footer__logo">
+          <!-- Show GR in light mode, GR2 in dark mode -->
+          <img src="../assets/icons/GR.svg" alt="SolunTek" class="logo-svg logo-light"
+            style="width: 140px; height: auto;">
+          <img src="../assets/icons/GR2.svg" alt="SolunTek" class="logo-svg logo-dark"
+            style="width: 140px; height: auto;">
+        </a>
+        <p class="footer__tagline" data-fr="Providing IT & Digital Solutions"
+          data-en="Providing IT & Digital Solutions">
+          Providing IT & Digital Solutions
         </p>
+        <!-- Social links -->
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+              <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5" />
+              <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+              <path d="M11 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a href="https://wa.me/213778161939?text=Bonjour%20SolunTek%2C%20je%20voudrais%20discuter%20d%27un%20projet."
+            class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
+          <a href="mailto:contact@soluntek.com" class="footer__social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+              <path d="M2 8l10 7 10-7" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="footer__links">
-        <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
-        <a href="#about" data-fr="À propos" data-en="About">À propos</a>
-        <a href="#services" data-fr="Services" data-en="Services">Services</a>
-        <a href="#why" data-fr="Pourquoi nous" data-en="Why us">Pourquoi nous</a>
-        <a href="#partners" data-fr="Partenaires" data-en="Partners">Partenaires</a>
-        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
-        <a href="coming-soon.html" data-fr="Catalogue" data-en="Catalog">Catalogue</a>
+
+      <!-- Column 2: Navigation -->
+      <div class="footer__col footer__col--nav">
+        <h4 class="footer__col-title" data-fr="Navigation" data-en="Navigation">Navigation</h4>
+        <nav class="footer__nav">
+          <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+          <a href="#services" data-fr="Services" data-en="Services">Services</a>
+          <a href="#why" data-fr="Pourquoi nous" data-en="Why us">Pourquoi nous</a>
+          <a href="#partners" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+          <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+          <a href="coming-soon.html" class="footer__nav-catalog">
+            <span data-fr="Catalogue" data-en="Catalog">Catalogue</span>
+            <span class="footer__nav-badge" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+          </a>
+        </nav>
       </div>
-      <div class="footer__contact-mini">
-        <h4 data-fr="Contact" data-en="Contact">Contact</h4>
-        <p>contact@soluntek.com</p>
-        <p>+213 561 19 67 64</p>
-        <p data-fr="Alger, Algérie" data-en="Algiers, Algeria">Alger, Algérie</p>
+
+      <!-- Column 3: Contact info -->
+      <div class="footer__col footer__col--contact">
+        <h4 class="footer__col-title" data-fr="Contact" data-en="Contact">Contact</h4>
+        <ul class="footer__contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+              <path d="M2 8l10 7 10-7" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <a href="mailto:contact@soluntek.com">contact@soluntek.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 4h4l2 4-2.5 1.5A11 11 0 0012 14l1.5-2.5L18 14v4a1 1 0 01-1 1A15 15 0 013 5a1 1 0 011-1z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <a href="tel:+213778161939">+213 778 16 19 39</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor"
+                stroke-width="1.5" />
+              <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span data-fr="Alger, Algérie" data-en="Algiers, Algeria">Alger, Algérie</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" />
+              <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <span data-fr="Réponse sous 24h" data-en="Reply within 24h">Réponse sous 24h</span>
+          </li>
+        </ul>
       </div>
+
+      <!-- Column 4: Map -->
+      <div class="footer__col footer__col--map">
+        <h4 class="footer__col-title" data-fr="Notre adresse" data-en="Our location">Notre adresse</h4>
+        <div class="footer__map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.263803721091!2d3.2359744!3d36.7162251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5100178966d5%3A0x961c43accc9188a9!2sCity%20khalef%20ismail!5e0!3m2!1sfr!2sdz!4v1772754657625!5m2!1sfr!2sdz"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="SolunTek — Alger">
+          </iframe>
+        </div>
+      </div>
+
     </div>
 
-    <!-- FOOTER MAP LOGIC INJECTED HERE -->
-    <div class="footer__map">
-      <div class="footer__map-label">
-        <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#4ABAFF"
-            stroke-width="1.5" />
-          <circle cx="12" cy="9" r="2.5" stroke="#4ABAFF" stroke-width="1.5" />
-        </svg>
-        <span data-fr="Nous trouver" data-en="Find us">Nous trouver</span>
-      </div>
-      <div class="footer__map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.263803721091!2d3.2359744!3d36.7162251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5100178966d5%3A0x961c43accc9188a9!2sCity%20khalef%20ismail!5e0!3m2!1sfr!2sdz!4v1772754657625!5m2!1sfr!2sdz"
-          width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" title="SolunTek location"></iframe>
-      </div>
-    </div>
-
+    <!-- Bottom bar -->
     <div class="footer__bottom">
-      <div class="footer__top-border"></div>
       <div class="container footer__bottom-inner">
-        <span>© 2025 SolunTek. All rights reserved.</span>
-        <span data-fr="Ingénierie de systèmes sûrs & intelligents" data-en="Providing IT & Digital Solutions">Providing
-          IT & Digital Solutions</span>
+        <span>© 2026 SolunTek. All rights reserved.</span>
+        <span data-fr="Providing IT & Digital Solutions" data-en="Providing IT & Digital Solutions">
+          Providing IT & Digital Solutions
+        </span>
       </div>
     </div>
+
   </footer>
 
   <!-- ═══════════════════════════════════════════

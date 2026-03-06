@@ -1,4 +1,21 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+    base: '/SolunTek/',   // must match your GitHub repo name exactly
+    publicDir: 'assets',
+    build: {
+        outDir: 'dist',
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                catalog: 'coming-soon.html'
+            }
+        }
+    }
+})
+
+/*
+  import { defineConfig } from 'vite';
 
 export default defineConfig({
     // Serve /assets/* directly at root (e.g. /assets/partners/geoxal.svg)
@@ -18,3 +35,4 @@ export default defineConfig({
         open: true,
     },
 });
+*/
