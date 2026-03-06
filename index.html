@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolunTek | Solutions IT & Digitales | Réseau · CCTV · Sécurité · Informatique</title>
+  <meta name="description"
+    content="SolunTek fournit des solutions IT complètes: infrastructure réseau, CCTV, contrôle d'accès, systèmes d'alarme et bureautique. Ingénié pour durer.">
+  <meta property="og:title" content="SolunTek — Solutions IT & Digitales">
+  <meta property="og:description"
+    content="SolunTek fournit des solutions IT complètes — du réseau à la sécurité intelligente. Conçu pour durer.">
+  <meta property="og:image" content="/assets/images/og-soluntek.jpg">
+  <link rel="canonical" href="https://soluntek.com">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechnologyCompany",
+    "name": "SolunTek",
+    "description": "Solutions IT & Digitales — Réseau, CCTV, Contrôle d'accès, Alarme, Informatique",
+    "url": "https://soluntek.com",
+    "serviceType": ["Infrastructure IT", "Vidéosurveillance CCTV", "Contrôle d'accès", "Systèmes d'alarme", "Produits informatiques"]
+  }
+  </script>
+
+  <!-- Vite entry — theme applied immediately inside app.js -->
+  <script type="module" src="/src/js/app.js"></script>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       PRELOADER
+  ═══════════════════════════════════════════ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__bg"></div>
+    <div class="preloader__scanlines"></div>
+    <div class="preloader__logo">
+      <!-- LOGO PLACEHOLDER: assets/icons/soluntek-logo-white.svg -->
+      <!-- Show GR in light mode, GR2 in dark mode -->
+      <img src="../assets/icons/GR.svg" alt="SolunTek" class="preloader-logo-svg logo-light">
+      <img src="../assets/icons/GR2.svg" alt="SolunTek" class="preloader-logo-svg logo-dark">
+    </div>
+    <div class="preloader__status">
+      <span class="preloader__label">INITIALISATION DES SYSTÈMES</span>
+    </div>
+    <div class="preloader__progress-wrap">
+      <div class="preloader__bar">
+        <div class="preloader__bar-fill" id="preloaderBarFill"></div>
+      </div>
+      <div class="preloader__counter" id="preloaderCounter">0%</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar" class="navbar">
+    <div class="container navbar__inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="navbar__logo" aria-label="SolunTek Accueil">
+        <!-- LOGO PLACEHOLDER: assets/icons/soluntek-logo.svg -->
+        <!-- Show GR in light mode, GR2 in dark mode -->
+        <img src="../assets/icons/GR.svg" alt="SolunTek" class="logo-svg logo-light">
+        <img src="../assets/icons/GR2.svg" alt="SolunTek" class="logo-svg logo-dark">
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="navbar__links">
+        <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
+        <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="#why" data-fr="Pourquoi nous" data-en="Why us">Pourquoi nous</a></li>
+        <li><a href="#partners" data-fr="Partenaires" data-en="Partners">Partenaires</a></li>
+        <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+        <li>
+          <a href="coming-soon.html" class="navbar__catalog-link" data-fr="Catalogue" data-en="Catalog">
+            Catalogue
+            <span class="navbar__catalog-badge" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right controls -->
+      <div class="navbar__controls">
+
+        <!-- 1. Language toggle (FR first) -->
+        <div class="lang-toggle" id="langToggle" role="group" aria-label="Sélecteur de langue">
+          <button class="lang-toggle__btn active" data-lang="fr">FR</button>
+          <span class="lang-toggle__divider">|</span>
+          <button class="lang-toggle__btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- 2. Dark/light theme toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+          <!-- Moon shown in light mode (click to go dark) -->
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" />
+          </svg>
+          <!-- Sun shown in dark mode (click to go light) -->
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" />
+            <path
+              d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </button>
+
+
+
+        <!-- Hamburger -->
+        <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="navbar__mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation mobile">
+      <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#services" data-fr="Services" data-en="Services">Services</a>
+      <a href="#why" data-fr="Pourquoi nous" data-en="Why us">Pourquoi nous</a>
+      <a href="#partners" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+      <a href="coming-soon.html" data-fr="Catalogue" data-en="Catalog">Catalogue</a>
+      <div class="navbar__mobile-lang">
+        <button class="lang-toggle__btn active" data-lang="fr">FR</button>
+        <span class="lang-toggle__divider">|</span>
+        <button class="lang-toggle__btn" data-lang="en">EN</button>
+      </div>
+      <button class="navbar__mobile-theme" id="mobileThemeToggle" aria-label="Changer le thème">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" />
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" />
+          <path
+            d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <span data-fr="Changer le thème" data-en="Toggle theme">Changer le thème</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══════════════════════════════════════════
+         SECTION 1: HERO
+    ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero section-full">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <div class="hero__eyebrow reveal-up">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            <span data-fr="SOLUTIONS IT & DIGITALES" data-en="IT & DIGITAL SOLUTIONS">SOLUTIONS IT & DIGITALES</span>
+          </div>
+
+          <h1 class="hero__headline reveal-up">
+            <span data-fr="Architecturez votre" data-en="Architect your">Architecturez votre</span><br>
+            <span class="hero__headline-accent" data-fr="infrastructure digitale."
+              data-en="digital infrastructure.">infrastructure digitale.</span>
+          </h1>
+
+          <p class="hero__sub reveal-up"
+            data-fr="SolunTek fournit des solutions IT complètes — du réseau à la sécurité intelligente. Conçu pour durer."
+            data-en="SolunTek delivers complete IT solutions — from network to intelligent security. Built to last.">
+            SolunTek fournit des solutions IT complètes — du réseau à la sécurité intelligente. Conçu pour durer.
+          </p>
+
+          <div class="hero__ctas reveal-up">
+            <a href="#contact" class="btn btn--primary btn--lg" data-fr="Demander une consultation"
+              data-en="Request a consultation">
+              Demander une consultation
+            </a>
+            <a href="#services" class="btn btn--ghost btn--lg" data-fr="Voir nos services"
+              data-en="Explore our services">
+              Voir nos services
+            </a>
+          </div>
+
+          <div class="hero__scroll-indicator reveal-up">
+            <div class="hero__scroll-line" aria-hidden="true"></div>
+            <span data-fr="Défiler" data-en="Scroll">Défiler</span>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal-left">
+          <svg class="hero__diagram" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="d-centerGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#0033FF" stop-opacity="0.14" />
+                <stop offset="55%" stop-color="#0033FF" stop-opacity="0.04" />
+                <stop offset="100%" stop-color="#0033FF" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="d-coreFill" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#EEF2FF" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#DBEAFE" stop-opacity="0.6" />
+              </radialGradient>
+              <linearGradient id="d-scanGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#0033FF" stop-opacity="0" />
+                <stop offset="60%" stop-color="#4ABAFF" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#4ABAFF" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="d-iconGrad" x1="28.76" y1="154.68" x2="104.33" y2="23.8"
+                gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#0600AF" />
+                <stop offset="0.5" stop-color="#0033FF" />
+                <stop offset="1" stop-color="#4ABAFF" />
+              </linearGradient>
+              <filter id="d-glow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="d-iconGlowF" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="7" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="d-cardShadow" x="-25%" y="-25%" width="150%" height="150%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0033FF" flood-opacity="0.12" />
+              </filter>
+              <clipPath id="d-coreClip">
+                <circle cx="260" cy="260" r="175" />
+              </clipPath>
+            </defs>
+
+            <!-- Ambient glow -->
+            <circle cx="260" cy="260" r="230" fill="url(#d-centerGlow)" />
+
+            <!-- Dot grid corners -->
+            <g opacity="0.15" fill="#0033FF">
+              <circle cx="52" cy="52" r="1.3" />
+              <circle cx="80" cy="52" r="1.3" />
+              <circle cx="108" cy="52" r="1.3" />
+              <circle cx="52" cy="80" r="1.3" />
+              <circle cx="80" cy="80" r="1.3" />
+              <circle cx="108" cy="80" r="1.3" />
+              <circle cx="52" cy="108" r="1.3" />
+              <circle cx="80" cy="108" r="1.3" />
+              <circle cx="412" cy="52" r="1.3" />
+              <circle cx="440" cy="52" r="1.3" />
+              <circle cx="468" cy="52" r="1.3" />
+              <circle cx="412" cy="80" r="1.3" />
+              <circle cx="440" cy="80" r="1.3" />
+              <circle cx="468" cy="80" r="1.3" />
+              <circle cx="440" cy="108" r="1.3" />
+              <circle cx="468" cy="108" r="1.3" />
+              <circle cx="52" cy="412" r="1.3" />
+              <circle cx="80" cy="412" r="1.3" />
+              <circle cx="52" cy="440" r="1.3" />
+              <circle cx="80" cy="440" r="1.3" />
+              <circle cx="108" cy="440" r="1.3" />
+              <circle cx="52" cy="468" r="1.3" />
+              <circle cx="80" cy="468" r="1.3" />
+              <circle cx="108" cy="468" r="1.3" />
+              <circle cx="412" cy="440" r="1.3" />
+              <circle cx="440" cy="440" r="1.3" />
+              <circle cx="468" cy="440" r="1.3" />
+              <circle cx="412" cy="468" r="1.3" />
+              <circle cx="440" cy="468" r="1.3" />
+              <circle cx="468" cy="468" r="1.3" />
+            </g>
+
+            <!-- Outer ring -->
+            <g class="d-ring-outer">
+              <circle cx="260" cy="260" r="205" stroke="#0033FF" stroke-width="0.8" stroke-opacity="0.18"
+                stroke-dasharray="4 16" />
+              <g stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" opacity="0.55">
+                <line x1="260" y1="55" x2="260" y2="68" />
+                <line x1="260" y1="452" x2="260" y2="465" />
+                <line x1="55" y1="260" x2="68" y2="260" />
+                <line x1="452" y1="260" x2="465" y2="260" />
+                <line x1="115" y1="115" x2="124" y2="124" />
+                <line x1="405" y1="115" x2="396" y2="124" />
+                <line x1="115" y1="405" x2="124" y2="396" />
+                <line x1="405" y1="405" x2="396" y2="396" />
+              </g>
+              <g filter="url(#d-glow)">
+                <rect width="10" height="10" rx="1.5" fill="#0033FF" transform="translate(255,51) rotate(45 5 5)" />
+                <rect width="10" height="10" rx="1.5" fill="#0033FF" transform="translate(255,459) rotate(45 5 5)" />
+                <rect width="10" height="10" rx="1.5" fill="#4ABAFF" transform="translate(459,255) rotate(45 5 5)" />
+                <rect width="10" height="10" rx="1.5" fill="#4ABAFF" transform="translate(51,255) rotate(45 5 5)" />
+              </g>
+            </g>
+
+            <!-- Middle ring -->
+            <g class="d-ring-mid">
+              <circle cx="260" cy="260" r="158" stroke="#0600AF" stroke-width="1" stroke-opacity="0.45"
+                stroke-dasharray="8 7" />
+              <g filter="url(#d-glow)" opacity="0.85">
+                <rect x="253" y="98" width="14" height="14" rx="2.5" fill="none" stroke="#4ABAFF" stroke-width="1.5" />
+                <rect x="253" y="408" width="14" height="14" rx="2.5" fill="none" stroke="#4ABAFF" stroke-width="1.5" />
+                <rect x="408" y="253" width="14" height="14" rx="2.5" fill="none" stroke="#0033FF" stroke-width="1.5" />
+                <rect x="98" y="253" width="14" height="14" rx="2.5" fill="none" stroke="#0033FF" stroke-width="1.5" />
+              </g>
+            </g>
+
+            <!-- Inner decorative ring -->
+            <circle cx="260" cy="260" r="108" stroke="#4ABAFF" stroke-width="0.75" stroke-opacity="0.2"
+              stroke-dasharray="3 9" />
+
+            <!-- Scanning line -->
+            <g clip-path="url(#d-coreClip)">
+              <line class="d-scan" x1="260" y1="260" x2="260" y2="85" stroke="url(#d-scanGrad)" stroke-width="2"
+                stroke-linecap="round" />
+            </g>
+
+            <!-- Data flow lines -->
+            <line class="d-dash d-dash--1" x1="272" y1="245" x2="364" y2="155" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--2" x1="283" y1="260" x2="400" y2="260" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--3" x1="272" y1="275" x2="364" y2="365" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--4" x1="248" y1="275" x2="156" y2="365" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--5" x1="260" y1="237" x2="260" y2="122" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+            <line class="d-dash d-dash--6" x1="248" y1="245" x2="156" y2="155" stroke="#4ABAFF" stroke-width="1.2"
+              stroke-opacity="0.45" stroke-dasharray="5 4" />
+
+            <!-- Node 1 — Réseau (top-right) -->
+            <g class="d-node d-node--1" filter="url(#d-cardShadow)">
+              <rect x="354" y="128" width="105" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0033FF"
+                stroke-width="1.2" />
+              <rect x="354" y="128" width="4" height="48" rx="2" fill="#0033FF" />
+              <circle cx="370" cy="152" r="5.5" fill="#0033FF" opacity="0.12" />
+              <circle cx="370" cy="152" r="3" fill="#0033FF" />
+              <text x="381" y="148" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Réseau</text>
+              <text x="381" y="162" fill="#0033FF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Infrastructure</text>
+            </g>
+
+            <!-- Node 2 — CCTV (right) -->
+            <g class="d-node d-node--2" filter="url(#d-cardShadow)">
+              <rect x="408" y="236" width="95" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#4ABAFF"
+                stroke-width="1.2" />
+              <rect x="408" y="236" width="4" height="48" rx="2" fill="#4ABAFF" />
+              <circle cx="424" cy="260" r="5.5" fill="#4ABAFF" opacity="0.12" />
+              <circle cx="424" cy="260" r="3" fill="#4ABAFF" />
+              <text x="435" y="256" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">CCTV</text>
+              <text x="435" y="270" fill="#4ABAFF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Surveillance</text>
+            </g>
+
+            <!-- Node 3 — Alarme (bottom-right) -->
+            <g class="d-node d-node--3" filter="url(#d-cardShadow)">
+              <rect x="354" y="344" width="105" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0033FF"
+                stroke-width="1.2" />
+              <rect x="354" y="344" width="4" height="48" rx="2" fill="#0033FF" />
+              <circle cx="370" cy="368" r="5.5" fill="#0033FF" opacity="0.12" />
+              <circle cx="370" cy="368" r="3" fill="#0033FF" />
+              <text x="381" y="364" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Alarme</text>
+              <text x="381" y="378" fill="#0033FF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Sécurité</text>
+            </g>
+
+            <!-- Node 4 — Contrôle d'accès (bottom-left) -->
+            <g class="d-node d-node--4" filter="url(#d-cardShadow)">
+              <rect x="61" y="344" width="115" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0600AF"
+                stroke-width="1.2" />
+              <rect x="61" y="344" width="4" height="48" rx="2" fill="#0600AF" />
+              <circle cx="77" cy="368" r="5.5" fill="#0600AF" opacity="0.12" />
+              <circle cx="77" cy="368" r="3" fill="#0600AF" />
+              <text x="88" y="364" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Contrôle</text>
+              <text x="88" y="378" fill="#0600AF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">d'accès</text>
+            </g>
+
+            <!-- Node 5 — Informatique (top-center) -->
+            <g class="d-node d-node--5" filter="url(#d-cardShadow)">
+              <rect x="194" y="68" width="132" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#4ABAFF"
+                stroke-width="1.2" />
+              <rect x="194" y="68" width="4" height="48" rx="2" fill="#4ABAFF" />
+              <circle cx="210" cy="92" r="5.5" fill="#4ABAFF" opacity="0.12" />
+              <circle cx="210" cy="92" r="3" fill="#4ABAFF" />
+              <text x="221" y="88" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Informatique</text>
+              <text x="221" y="102" fill="#4ABAFF" font-family="Inter,sans-serif" font-size="7.5" opacity="0.75">Soft
+                &amp; Hardware</text>
+            </g>
+
+            <!-- Node 6 — Bureautique (top-left) -->
+            <g class="d-node d-node--6" filter="url(#d-cardShadow)">
+              <rect x="61" y="128" width="115" height="48" rx="10" fill="white" fill-opacity="0.95" stroke="#0033FF"
+                stroke-width="1.2" />
+              <rect x="61" y="128" width="4" height="48" rx="2" fill="#0033FF" />
+              <circle cx="77" cy="152" r="5.5" fill="#0033FF" opacity="0.12" />
+              <circle cx="77" cy="152" r="3" fill="#0033FF" />
+              <text x="88" y="148" fill="#0A0A1A" font-family="Inter,sans-serif" font-size="9.5"
+                font-weight="700">Bureautique</text>
+              <text x="88" y="162" fill="#0033FF" font-family="Inter,sans-serif" font-size="7.5"
+                opacity="0.75">Automatisation</text>
+            </g>
+
+            <!-- Core background — light so icon is visible -->
+            <circle cx="260" cy="260" r="82" fill="url(#d-coreFill)" stroke="#0033FF" stroke-width="1"
+              stroke-opacity="0.2" />
+            <circle cx="260" cy="260" r="66" fill="white" fill-opacity="0.75" stroke="#4ABAFF" stroke-width="0.75"
+              stroke-opacity="0.35" />
+
+            <!-- Pulse rings -->
+            <circle cx="260" cy="260" r="46" class="d-pulse d-pulse--1" fill="none" stroke="#0033FF"
+              stroke-width="1.5" />
+            <circle cx="260" cy="260" r="60" class="d-pulse d-pulse--2" fill="none" stroke="#4ABAFF" stroke-width="1" />
+            <circle cx="260" cy="260" r="74" class="d-pulse d-pulse--3" fill="none" stroke="#0033FF"
+              stroke-width="0.5" />
+
+            <!-- Icon glow layer (blurred, behind) -->
+            <g transform="translate(227.9, 221.0) scale(0.3922)" filter="url(#d-iconGlowF)" opacity="0.45">
+              <path
+                d="M31.13,62.94H0v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31V0h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="#4ABAFF" />
+              <path
+                d="M55.98,104.97h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0-.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="#4ABAFF" />
+              <path
+                d="M60.82,136.44h-31.13v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31v-26.84h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="#4ABAFF" />
+              <path
+                d="M85.67,178.47h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0,.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="#4ABAFF" />
+            </g>
+
+            <!-- Icon — sharp visible layer -->
+            <g class="d-icon" transform="translate(227.9, 221.0) scale(0.3922)">
+              <path
+                d="M31.13,62.94H0v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31V0h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="url(#d-iconGrad)" />
+              <path
+                d="M55.98,104.97h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0-.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="url(#d-iconGrad)" />
+              <path
+                d="M60.82,136.44h-31.13v-15.69h27.02c.49,0,.96-.2,1.31-.54l18.55-18.55c.35-.35.54-.82.54-1.31v-26.84h15.69v30.96c0,2.02-.8,3.96-2.23,5.38l-24.36,24.36c-1.43,1.43-3.36,2.23-5.38,2.23Z"
+                fill="url(#d-iconGrad)" />
+              <path
+                d="M85.67,178.47h-15.69v-30.96c0-2.02.8-3.96,2.23-5.38l24.36-24.36c1.43-1.43,3.36-2.23,5.38-2.23h31.13v15.69h-27.02c-.49,0-.96.2-1.31.54l-18.55,18.55c-.35.35-.54.82-.54,1.31v26.84Z"
+                fill="url(#d-iconGrad)" />
+            </g>
+
+            <!-- Corner brackets -->
+            <g stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" opacity="0.3">
+              <path d="M24 50 L24 24 L50 24" />
+              <path d="M470 50 L470 24 L444 24" />
+              <path d="M24 470 L24 496 L50 496" />
+              <path d="M470 470 L470 496 L444 496" />
+            </g>
+
+            <!-- Engineering readout -->
+            <g font-family="'Courier New',monospace" font-size="7.5" fill="#0033FF" fill-opacity="0.4">
+              <text x="32" y="18">SYS.ONLINE</text>
+              <text x="32" y="512">v2.6.0</text>
+              <text x="424" y="512">ALG·DZ</text>
+            </g>
+
+            <!-- Status indicator -->
+            <g transform="translate(32, 488)">
+              <circle r="3.5" fill="#4ABAFF">
+                <animate attributeName="opacity" values="1;0.1;1" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <circle r="8" fill="#4ABAFF" opacity="0.08">
+                <animate attributeName="opacity" values="0.08;0.25;0.08" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <text x="14" y="4" font-family="'Courier New',monospace" font-size="7.5" fill="#4ABAFF"
+                fill-opacity="0.65">SECURE · CONNECTED</text>
+            </g>
+
+          </svg>
+        </div>
+
+        <div class="hero__image">
+          <img src="../assets/icons/Logo/V2/SVG/GR2.svg" alt="Hero-image" class="hero-image.svg">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2: ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="about section-padded">
+      <div class="container about__grid">
+        <div class="about__content reveal-up">
+          <div class="section-eyebrow" data-fr="À PROPOS DE SOLUNTEK" data-en="ABOUT SOLUNTEK">À PROPOS DE SOLUNTEK
+          </div>
+          <h2 class="section-title">
+            <span data-fr="La réflexion systèmes." data-en="Systems thinking.">La réflexion systèmes.</span><br>
+            <span data-fr="L'ingénierie d'abord." data-en="Engineering first.">L'ingénierie d'abord.</span>
+          </h2>
+          <p class="about__body"
+            data-fr="SolunTek a été fondé sur une conviction simple : l'infrastructure technologique doit être architecturée avant d'être déployée. Nous ne posons pas des composants — nous concevons des systèmes. Chaque mission commence par une évaluation approfondie de votre contexte opérationnel."
+            data-en="SolunTek was built on a simple conviction: technology infrastructure must be architected before it is deployed. We don't install components — we design systems. Every engagement begins with a thorough assessment of your operational context.">
+            SolunTek a été fondé sur une conviction simple : l'infrastructure technologique doit être architecturée
+            avant d'être déployée. Nous ne posons pas des composants — nous concevons des systèmes. Chaque mission
+            commence par une évaluation approfondie de votre contexte opérationnel.
+          </p>
+          <p class="about__body"
+            data-fr="Notre philosophie est sécurité avant tout : pas comme une réflexion après coup, mais comme la fondation de chaque réseau que nous construisons, chaque caméra que nous déployons, chaque accès que nous commissionnons."
+            data-en="Our philosophy is security first: not as an afterthought, but as the foundation of every network we build, every camera we deploy, every access point we commission.">
+            Notre philosophie est sécurité avant tout : pas comme une réflexion après coup, mais comme la fondation de
+            chaque réseau que nous construisons, chaque caméra que nous déployons, chaque accès que nous commissionnons.
+          </p>
+
+          <div class="about__methodology">
+            <div class="methodology-step">
+              <span class="methodology-step__num">01</span>
+              <span data-fr="Évaluer" data-en="Assess">Évaluer</span>
+            </div>
+            <div class="methodology-step__arrow" aria-hidden="true">→</div>
+            <div class="methodology-step">
+              <span class="methodology-step__num">02</span>
+              <span data-fr="Architecturer" data-en="Architect">Architecturer</span>
+            </div>
+            <div class="methodology-step__arrow" aria-hidden="true">→</div>
+            <div class="methodology-step">
+              <span class="methodology-step__num">03</span>
+              <span data-fr="Déployer" data-en="Deploy">Déployer</span>
+            </div>
+            <div class="methodology-step__arrow" aria-hidden="true">→</div>
+            <div class="methodology-step">
+              <span class="methodology-step__num">04</span>
+              <span data-fr="Maintenir" data-en="Maintain">Maintenir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__stats reveal-right">
+          <div class="stat-card">
+            <div class="stat-card__num" data-count="50" data-suffix="+">0+</div>
+            <div class="stat-card__label" data-fr="Projets réalisés" data-en="Projects Delivered">Projets réalisés</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num" data-count="6" data-suffix="">0</div>
+            <div class="stat-card__label" data-fr="Domaines de solutions" data-en="Solution Domains">Domaines de
+              solutions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num" data-count="100" data-suffix="%">0%</div>
+            <div class="stat-card__label" data-fr="Solutions sur mesure" data-en="Client-Tailored">Solutions sur mesure
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num" data-count="24" data-suffix="h">0h</div>
+            <div class="stat-card__label" data-fr="Engagement de réponse" data-en="Response Commitment">Engagement de
+              réponse</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3: SERVICES
+    ═══════════════════════════════════════════ -->
+    <section id="services" class="services section-padded">
+      <div class="section-separator"></div>
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-eyebrow" data-fr="CE QUE NOUS CONSTRUISONS" data-en="WHAT WE BUILD">CE QUE NOUS
+            CONSTRUISONS</div>
+          <h2 class="section-title">
+            <span data-fr="Six systèmes." data-en="Six systems.">Six systèmes.</span><br>
+            <span data-fr="Un seul partenaire." data-en="One partner.">Un seul partenaire.</span>
+          </h2>
+        </div>
+
+        <div class="services__grid">
+          <!-- Card 1: Network -->
+          <div class="service-card stagger-item" data-index="0">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"
+                aria-hidden="true">
+                <circle cx="24" cy="12" r="4" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="8" cy="36" r="4" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="40" cy="36" r="4" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="24" cy="36" r="4" stroke="#4ABAFF" stroke-width="1.5" />
+                <line x1="24" y1="16" x2="8" y2="32" stroke="#4ABAFF" stroke-width="1.5" />
+                <line x1="24" y1="16" x2="24" y2="32" stroke="#4ABAFF" stroke-width="1.5" />
+                <line x1="24" y1="16" x2="40" y2="32" stroke="#4ABAFF" stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="service-card__number" aria-hidden="true">01</div>
+            <h3 class="service-card__title" data-fr="Infrastructure Réseau" data-en="Network Infrastructure">
+              Infrastructure Réseau</h3>
+            <p class="service-card__problem" data-fr="UN RÉSEAU INSTABLE BLOQUE VOS OPÉRATIONS."
+              data-en="UNSTABLE NETWORKS HALT OPERATIONS.">UN RÉSEAU INSTABLE BLOQUE VOS OPÉRATIONS.</p>
+            <p class="service-card__solution"
+              data-fr="Nous concevons et déployons des réseaux d'entreprise structurés — filaires, sans fil, segmentés VLAN, entièrement documentés."
+              data-en="We design and deploy structured enterprise networks — wired, wireless, VLAN-segmented, fully documented.">
+              Nous concevons et déployons des réseaux d'entreprise structurés — filaires, sans fil, segmentés VLAN,
+              entièrement documentés.
+            </p>
+            <div class="service-card__outcome" data-fr="Infrastructure zéro panne, conçue pour croître."
+              data-en="Zero-downtime infrastructure built for growth.">Infrastructure zéro panne, conçue pour croître.
+            </div>
+            <a href="#contact" class="service-card__cta" data-fr="En savoir plus →" data-en="Learn more →">En savoir
+              plus →</a>
+          </div>
+
+          <!-- Card 2: CCTV -->
+          <div class="service-card stagger-item" data-index="1">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"
+                aria-hidden="true">
+                <rect x="4" y="16" width="28" height="16" rx="3" stroke="#4ABAFF" stroke-width="1.5" />
+                <path d="M32 20L44 14V34L32 28" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="18" cy="24" r="4" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="18" cy="24" r="1.5" fill="#4ABAFF" />
+              </svg>
+            </div>
+            <div class="service-card__number" aria-hidden="true">02</div>
+            <h3 class="service-card__title" data-fr="Vidéosurveillance CCTV" data-en="CCTV & Surveillance">
+              Vidéosurveillance CCTV</h3>
+            <p class="service-card__problem" data-fr="LES ANGLES MORTS CRÉENT DES RISQUES OPÉRATIONNELS."
+              data-en="BLIND SPOTS CREATE OPERATIONAL RISK.">LES ANGLES MORTS CRÉENT DES RISQUES OPÉRATIONNELS.</p>
+            <p class="service-card__solution"
+              data-fr="Systèmes de surveillance IP avec monitoring intelligent, accès à distance et stockage longue durée."
+              data-en="IP-based surveillance systems with intelligent monitoring, remote access, and long-term storage.">
+              Systèmes de surveillance IP avec monitoring intelligent, accès à distance et stockage longue durée.
+            </p>
+            <div class="service-card__outcome" data-fr="Contrôle visuel complet de vos sites, 24h/24."
+              data-en="Complete visual control of your facilities, 24/7.">Contrôle visuel complet de vos sites, 24h/24.
+            </div>
+            <a href="#contact" class="service-card__cta" data-fr="En savoir plus →" data-en="Learn more →">En savoir
+              plus →</a>
+          </div>
+
+          <!-- Card 3: Alarm -->
+          <div class="service-card stagger-item" data-index="2">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"
+                aria-hidden="true">
+                <path d="M24 4L8 12V28C8 36 16 42 24 44C32 42 40 36 40 28V12L24 4Z" stroke="#4ABAFF"
+                  stroke-width="1.5" />
+                <path d="M18 24L22 28L30 20" stroke="#4ABAFF" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="service-card__number" aria-hidden="true">03</div>
+            <h3 class="service-card__title" data-fr="Systèmes d'Alarme" data-en="Alarm Systems">Systèmes d'Alarme</h3>
+            <p class="service-card__problem" data-fr="LES INTRUSIONS PASSENT INAPERÇUES TROP LONGTEMPS."
+              data-en="INTRUSIONS GO UNDETECTED TOO LONG.">LES INTRUSIONS PASSENT INAPERÇUES TROP LONGTEMPS.</p>
+            <p class="service-card__solution"
+              data-fr="Systèmes d'alarme multi-zones avec alertes temps réel, monitoring centralisé et protocoles d'escalade discrets."
+              data-en="Multi-zone alarm systems with real-time alerts, central monitoring, and silent escalation protocols.">
+              Systèmes d'alarme multi-zones avec alertes temps réel, monitoring centralisé et protocoles d'escalade
+              discrets.
+            </p>
+            <div class="service-card__outcome" data-fr="Détection proactive des menaces avant les dommages."
+              data-en="Proactive threat detection before damage occurs.">Détection proactive des menaces avant les
+              dommages.</div>
+            <a href="#contact" class="service-card__cta" data-fr="En savoir plus →" data-en="Learn more →">En savoir
+              plus →</a>
+          </div>
+
+          <!-- Card 4: Access Control -->
+          <div class="service-card stagger-item" data-index="3">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"
+                aria-hidden="true">
+                <rect x="10" y="22" width="28" height="22" rx="3" stroke="#4ABAFF" stroke-width="1.5" />
+                <path d="M16 22V16C16 10 32 10 32 16V22" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="24" cy="33" r="3" fill="#4ABAFF" />
+                <line x1="24" y1="36" x2="24" y2="40" stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="service-card__number" aria-hidden="true">04</div>
+            <h3 class="service-card__title" data-fr="Contrôle d'Accès" data-en="Access Control">Contrôle d'Accès</h3>
+            <p class="service-card__problem" data-fr="L'ACCÈS PHYSIQUE EST SOUVENT LA FAILLE LA PLUS FAIBLE."
+              data-en="PHYSICAL ACCESS IS OFTEN THE WEAKEST LINK.">L'ACCÈS PHYSIQUE EST SOUVENT LA FAILLE LA PLUS
+              FAIBLE.</p>
+            <p class="service-card__solution"
+              data-fr="Contrôle d'accès biométrique, par badge et cloud pour tout type de site. Piste d'audit complète incluse."
+              data-en="Biometric, card-based, and cloud-managed access control for any facility. Full audit trail included.">
+              Contrôle d'accès biométrique, par badge et cloud pour tout type de site. Piste d'audit complète incluse.
+            </p>
+            <div class="service-card__outcome" data-fr="Chaque point d'entrée, sous contrôle précis."
+              data-en="Every entry point, under precise control.">Chaque point d'entrée, sous contrôle précis.</div>
+            <a href="#contact" class="service-card__cta" data-fr="En savoir plus →" data-en="Learn more →">En savoir
+              plus →</a>
+          </div>
+
+          <!-- Card 5: IT Products -->
+          <div class="service-card stagger-item" data-index="4">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"
+                aria-hidden="true">
+                <rect x="6" y="10" width="36" height="10" rx="2" stroke="#4ABAFF" stroke-width="1.5" />
+                <rect x="6" y="24" width="36" height="10" rx="2" stroke="#4ABAFF" stroke-width="1.5" />
+                <circle cx="36" cy="15" r="2" fill="#4ABAFF" />
+                <circle cx="36" cy="29" r="2" fill="#4ABAFF" />
+                <circle cx="30" cy="15" r="2" fill="rgba(74,186,255,0.4)" />
+                <circle cx="30" cy="29" r="2" fill="rgba(74,186,255,0.4)" />
+              </svg>
+            </div>
+            <div class="service-card__number" aria-hidden="true">05</div>
+            <h3 class="service-card__title" data-fr="Produits Informatiques" data-en="IT Products & Hardware">Produits
+              Informatiques</h3>
+            <p class="service-card__problem" data-fr="UN MATÉRIEL INADAPTÉ NUIT À LA PERFORMANCE."
+              data-en="MISMATCHED HARDWARE HURTS PERFORMANCE.">UN MATÉRIEL INADAPTÉ NUIT À LA PERFORMANCE.</p>
+            <p class="service-card__solution"
+              data-fr="Nous approvisionnons, configurons et déployons du matériel professionnel adapté précisément à vos charges de travail."
+              data-en="We source, configure, and deploy enterprise-grade hardware precisely matched to your workload.">
+              Nous approvisionnons, configurons et déployons du matériel professionnel adapté précisément à vos charges
+              de travail.
+            </p>
+            <div class="service-card__outcome" data-fr="Le bon outil. Au bon endroit. À chaque fois."
+              data-en="Right tool. Right place. Every time.">Le bon outil. Au bon endroit. À chaque fois.</div>
+            <a href="#contact" class="service-card__cta" data-fr="En savoir plus →" data-en="Learn more →">En savoir
+              plus →</a>
+          </div>
+
+          <!-- Card 6: Office Automation -->
+          <div class="service-card stagger-item" data-index="5">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"
+                aria-hidden="true">
+                <rect x="8" y="6" width="22" height="30" rx="2" stroke="#4ABAFF" stroke-width="1.5" />
+                <path d="M14 14H24M14 19H24M14 24H20" stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" />
+                <rect x="20" y="24" width="20" height="14" rx="2" stroke="#4ABAFF" stroke-width="1.5" />
+                <path d="M24 30H36M24 34H32" stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="service-card__number" aria-hidden="true">06</div>
+            <h3 class="service-card__title" data-fr="Bureautique & Automatisation" data-en="Office Automation">
+              Bureautique</h3>
+            <p class="service-card__problem" data-fr="LES TÂCHES MANUELLES CONSOMMENT DU TEMPS ET CRÉENT DES ERREURS."
+              data-en="MANUAL TASKS WASTE TIME AND CREATE ERRORS.">LES TÂCHES MANUELLES CONSOMMENT DU TEMPS ET CRÉENT
+              DES ERREURS.</p>
+            <p class="service-card__solution"
+              data-fr="Digitalisation complète du bureau — infrastructure d'impression, gestion documentaire, automatisation et support IT."
+              data-en="End-to-end office digitization — printing, document management, workflow automation, and IT support.">
+              Digitalisation complète du bureau — infrastructure d'impression, gestion documentaire, automatisation et
+              support IT.
+            </p>
+            <div class="service-card__outcome" data-fr="Efficacité opérationnelle à chaque poste."
+              data-en="Operational efficiency at every desk.">Efficacité opérationnelle à chaque poste.</div>
+            <a href="#contact" class="service-card__cta" data-fr="En savoir plus →" data-en="Learn more →">En savoir
+              plus →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4: WHY SOLUNTEK
+    ═══════════════════════════════════════════ -->
+    <section id="why" class="why section-padded">
+      <div class="section-separator"></div>
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-eyebrow" data-fr="NOTRE APPROCHE" data-en="OUR APPROACH">NOTRE APPROCHE</div>
+          <h2 class="section-title">
+            <span data-fr="Pas un fournisseur." data-en="Not a vendor.">Pas un fournisseur.</span><br>
+            <span data-fr="Un partenaire stratégique." data-en="A strategic partner.">Un partenaire stratégique.</span>
+          </h2>
+        </div>
+
+        <div class="why__pillars">
+          <div class="pillar-card reveal-up">
+            <div class="pillar-card__num">01</div>
+            <div class="pillar-card__accent-line"></div>
+            <h3 data-fr="Architecture sur mesure" data-en="Tailored Architecture">Architecture sur mesure</h3>
+            <p data-fr="Aucun modèle prêt à l'emploi. Chaque système est conçu à partir de votre contexte opérationnel spécifique, de vos contraintes et de votre trajectoire de croissance."
+              data-en="No templates. Every system is engineered from your specific operational context, constraints, and growth trajectory.">
+              Aucun modèle prêt à l'emploi. Chaque système est conçu à partir de votre contexte opérationnel spécifique,
+              de vos contraintes et de votre trajectoire de croissance.
+            </p>
+          </div>
+
+          <div class="pillar-card reveal-up">
+            <div class="pillar-card__num">02</div>
+            <div class="pillar-card__accent-line"></div>
+            <h3 data-fr="Sécurité par conception" data-en="Security by Design">Sécurité par conception</h3>
+            <p data-fr="La sécurité n'est pas une couche ajoutée après coup. C'est la fondation structurelle de chaque réseau que nous construisons, avant le premier câble posé."
+              data-en="Security is not added after deployment. It is the structural foundation of every system we build, before the first cable is run.">
+              La sécurité n'est pas une couche ajoutée après coup. C'est la fondation structurelle de chaque réseau que
+              nous construisons, avant le premier câble posé.
+            </p>
+          </div>
+
+          <div class="pillar-card reveal-up">
+            <div class="pillar-card__num">03</div>
+            <div class="pillar-card__accent-line"></div>
+            <h3 data-fr="Partenariat à long terme" data-en="Long-Term Partnership">Partenariat à long terme</h3>
+            <p data-fr="Nous architecturons pour les 5 prochaines années, pas seulement pour aujourd'hui. La maintenance et l'évolution font partie de l'engagement."
+              data-en="We architect for 5 years ahead, not just today. Maintenance and evolution are part of the engagement—not optional extras.">
+              Nous architecturons pour les 5 prochaines années, pas seulement pour aujourd'hui. La maintenance et
+              l'évolution font partie de l'engagement.
+            </p>
+          </div>
+
+          <div class="pillar-card reveal-up">
+            <div class="pillar-card__num">04</div>
+            <div class="pillar-card__accent-line"></div>
+            <h3 data-fr="Responsabilité de bout en bout" data-en="End-to-End Ownership">Responsabilité de bout en bout
+            </h3>
+            <p data-fr="De l'évaluation au déploiement à la maintenance — un seul partenaire, pleine responsabilité. Pas de délais de transfert."
+              data-en="From assessment to deployment to maintenance — one partner, full accountability. No handoff delays.">
+              De l'évaluation au déploiement à la maintenance — un seul partenaire, pleine responsabilité. Pas de délais
+              de transfert.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="why__timeline reveal-up">
+          <div class="timeline-track">
+            <div class="timeline-node">
+              <div class="timeline-node__dot"></div>
+              <div class="timeline-node__label" data-fr="Évaluation" data-en="Assessment">Évaluation</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-node__dot"></div>
+              <div class="timeline-node__label" data-fr="Architecture" data-en="Architecture">Architecture</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-node__dot"></div>
+              <div class="timeline-node__label" data-fr="Déploiement" data-en="Deployment">Déploiement</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-node__dot"></div>
+              <div class="timeline-node__label" data-fr="Maintenance" data-en="Maintenance">Maintenance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5: PARTNERS
+    ═══════════════════════════════════════════ -->
+    <section id="partners" class="partners section-padded">
+      <div class="section-separator"></div>
+      <div class="container partners__header reveal-up">
+        <div class="section-eyebrow" data-fr="QUI NOUS FAIT CONFIANCE" data-en="WHO TRUSTS US">QUI NOUS FAIT CONFIANCE
+        </div>
+        <h2 class="section-title" data-fr="Ils nous font confiance" data-en="Who trusts us">
+          Ils nous font confiance
+        </h2>
+      </div>
+
+      <div class="partners__scroll-wrap">
+        <div class="partners__scroll-track">
+          <!-- Set 1 -->
+          <img src="/assets/partners/cocreative.svg" alt="Cocreative" class="partner-logo">
+          <img src="/assets/partners/geoxal.svg" alt="Geoxal" class="partner-logo">
+          <img src="/assets/partners/geoxpin.svg" alt="Geoxpin" class="partner-logo">
+          <img src="/assets/partners/imkan.svg" alt="Imkan" class="partner-logo">
+          <img src="/assets/partners/pintel.svg" alt="Pintel" class="partner-logo">
+          <!-- Set 2 — exact duplicate for seamless loop -->
+          <img src="/assets/partners/cocreative.svg" alt="Cocreative" class="partner-logo" aria-hidden="true">
+          <img src="/assets/partners/geoxal.svg" alt="Geoxal" class="partner-logo" aria-hidden="true">
+          <img src="/assets/partners/geoxpin.svg" alt="Geoxpin" class="partner-logo" aria-hidden="true">
+          <img src="/assets/partners/imkan.svg" alt="Imkan" class="partner-logo" aria-hidden="true">
+          <img src="/assets/partners/pintel.svg" alt="Pintel" class="partner-logo" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 6: CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact" class="contact section-padded">
+      <div class="section-separator"></div>
+
+      <div class="contact__headline-block reveal-up">
+        <h2 data-fr="Prêt à bâtir votre<br>infrastructure ?" data-en="Ready to build your<br>infrastructure?">
+          Prêt à bâtir votre<br>infrastructure ?
+        </h2>
+        <p data-fr="Discutons de vos systèmes, de vos risques et de votre feuille de route."
+          data-en="Let's discuss your systems, your risk surface, and your roadmap.">
+          Discutons de vos systèmes, de vos risques et de votre feuille de route.
+        </p>
+      </div>
+
+      <div class="container contact__grid">
+        <!-- Form -->
+        <div class="contact__form-wrap reveal-up">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder=" ">
+                <label for="cf-name" data-fr="Nom complet" data-en="Full Name">Nom complet</label>
+              </div>
+              <div class="form-field">
+                <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder=" ">
+                <label for="cf-company" data-fr="Entreprise" data-en="Company">Entreprise</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder=" ">
+                <label for="cf-email" data-fr="Adresse email" data-en="Email Address">Adresse email</label>
+              </div>
+              <div class="form-field">
+                <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder=" ">
+                <label for="cf-phone" data-fr="Numéro de téléphone" data-en="Phone Number">Numéro de téléphone</label>
+              </div>
+            </div>
+            <div class="form-field form-field--full">
+              <textarea id="cf-message" name="message" rows="5" required placeholder=" "></textarea>
+              <label for="cf-message" data-fr="Décrivez brièvement votre besoin"
+                data-en="Describe your needs briefly">Décrivez brièvement votre besoin</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg btn--full">
+              <span data-fr="Démarrer la conversation" data-en="Start the conversation">Démarrer la conversation</span>
+              <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12H19M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <!-- Success state: HIDDEN by default, JS reveals on submit -->
+            <div class="form-success" id="formSuccess" hidden style="display:none;">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" stroke="#4ABAFF" stroke-width="1.5" />
+                <path d="M8 12l3 3 5-5" stroke="#4ABAFF" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <p data-fr="Message reçu. Nous vous répondons sous 24h."
+                data-en="Message received. We'll reply within 24h.">
+                Message reçu. Nous vous répondons sous 24h.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact info -->
+        <div class="contact__info reveal-right">
+          <div class="contact-info-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="#4ABAFF" stroke-width="1.5" />
+              <path d="M2 8l10 7 10-7" stroke="#4ABAFF" stroke-width="1.5" />
+            </svg>
+            <div>
+              <div class="contact-info-label" data-fr="Email" data-en="Email">Email</div>
+              <a href="mailto:contact@soluntek.com" class="contact-info-value">contact@soluntek.com</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 4h4l2 4-2.5 1.5A11 11 0 0012 14l1.5-2.5L18 14v4a1 1 0 01-1 1A15 15 0 013 5a1 1 0 011-1z"
+                stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <div class="contact-info-label" data-fr="Téléphone" data-en="Phone">Téléphone</div>
+              <a href="tel:+213561196764" class="contact-info-value">+213 778 16 19 39</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#4ABAFF"
+                stroke-width="1.5" />
+              <circle cx="12" cy="9" r="2.5" stroke="#4ABAFF" stroke-width="1.5" />
+            </svg>
+            <div>
+              <div class="contact-info-label" data-fr="Localisation" data-en="Location">Localisation</div>
+              <div class="contact-info-value">Cite Khalef Ismail, Dar El Beida, Alger, Algérie</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-note"
+              data-fr="Réponse sous 24 heures ouvrables. Toutes les communications sont confidentielles."
+              data-en="Response within 24 business hours. All communications are confidential.">
+              Réponse sous 24 heures ouvrables. Toutes les communications sont confidentielles.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER (always dark)
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+
+    <!-- Top separator line -->
+    <div class="footer__separator"></div>
+
+    <div class="container footer__body">
+
+      <!-- Column 1: Brand -->
+      <div class="footer__col footer__col--brand">
+        <!-- Logo -->
+        <a href="#hero" class="footer__logo">
+          <!-- Show GR in light mode, GR2 in dark mode -->
+          <img src="../assets/icons/GR.svg" alt="SolunTek" class="logo-svg logo-light"
+            style="width: 140px; height: auto;">
+          <img src="../assets/icons/GR2.svg" alt="SolunTek" class="logo-svg logo-dark"
+            style="width: 140px; height: auto;">
+        </a>
+        <p class="footer__tagline" data-fr="Providing IT & Digital Solutions"
+          data-en="Providing IT & Digital Solutions">
+          Providing IT & Digital Solutions
+        </p>
+        <!-- Social links -->
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+              <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5" />
+              <path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+              <path d="M11 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a href="https://wa.me/213778161939?text=Bonjour%20SolunTek%2C%20je%20voudrais%20discuter%20d%27un%20projet."
+            class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </a>
+          <a href="mailto:contact@soluntek.com" class="footer__social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+              <path d="M2 8l10 7 10-7" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div class="footer__col footer__col--nav">
+        <h4 class="footer__col-title" data-fr="Navigation" data-en="Navigation">Navigation</h4>
+        <nav class="footer__nav">
+          <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+          <a href="#services" data-fr="Services" data-en="Services">Services</a>
+          <a href="#why" data-fr="Pourquoi nous" data-en="Why us">Pourquoi nous</a>
+          <a href="#partners" data-fr="Partenaires" data-en="Partners">Partenaires</a>
+          <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+          <a href="coming-soon.html" class="footer__nav-catalog">
+            <span data-fr="Catalogue" data-en="Catalog">Catalogue</span>
+            <span class="footer__nav-badge" data-fr="Bientôt" data-en="Soon">Bientôt</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Column 3: Contact info -->
+      <div class="footer__col footer__col--contact">
+        <h4 class="footer__col-title" data-fr="Contact" data-en="Contact">Contact</h4>
+        <ul class="footer__contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+              <path d="M2 8l10 7 10-7" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <a href="mailto:contact@soluntek.com">contact@soluntek.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 4h4l2 4-2.5 1.5A11 11 0 0012 14l1.5-2.5L18 14v4a1 1 0 01-1 1A15 15 0 013 5a1 1 0 011-1z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <a href="tel:+213778161939">+213 778 16 19 39</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor"
+                stroke-width="1.5" />
+              <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span data-fr="Alger, Algérie" data-en="Algiers, Algeria">Alger, Algérie</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" />
+              <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <span data-fr="Réponse sous 24h" data-en="Reply within 24h">Réponse sous 24h</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Map -->
+      <div class="footer__col footer__col--map">
+        <h4 class="footer__col-title" data-fr="Notre adresse" data-en="Our location">Notre adresse</h4>
+        <div class="footer__map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.263803721091!2d3.2359744!3d36.7162251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e5100178966d5%3A0x961c43accc9188a9!2sCity%20khalef%20ismail!5e0!3m2!1sfr!2sdz!4v1772754657625!5m2!1sfr!2sdz"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="SolunTek — Alger">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <span>© 2026 SolunTek. All rights reserved.</span>
+        <span data-fr="Providing IT & Digital Solutions" data-en="Providing IT & Digital Solutions">
+          Providing IT & Digital Solutions
+        </span>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       WHATSAPP FLOAT
+  ═══════════════════════════════════════════ -->
+  <div class="whatsapp-float" id="whatsappFloat">
+    <a href="https://wa.me/213778161939?text=Bonjour%20SolunTek%2C%20je%20voudrais%20discuter%20d%27un%20projet."
+      target="_blank" rel="noopener noreferrer" class="whatsapp-float__btn" aria-label="Discuter sur WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <div class="whatsapp-float__tooltip" data-fr="Discuter sur WhatsApp" data-en="Chat on WhatsApp">Discuter sur
+      WhatsApp</div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+/* =========================================
+   SOLUNTEK — MODAL STYLES
+   ========================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(4, 0, 46, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: var(--color-surface-1);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(24px) scale(0.97);
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.modal-overlay.open .modal-content {
+    transform: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color var(--duration-fast), background var(--duration-fast);
+}
+
+.modal-close:hover {
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Lock scroll when modal open */
+body.modal-open {
+    overflow: hidden;
+}

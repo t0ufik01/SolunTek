@@ -1,0 +1,97 @@
+/* =========================================
+   SOLUNTEK — CSS CUSTOM PROPERTIES
+   ========================================= */
+
+/* ── Brand colors (never change between modes) ── */
+:root {
+  --color-primary: #0600AF;
+  --color-vivid: #0033FF;
+  --color-accent: #4ABAFF;
+
+  /* Typography */
+  --font-display: 'Trap', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+  --text-2xl: 40px;
+  --text-3xl: 56px;
+  --text-4xl: 72px;
+  --text-5xl: 96px;
+
+  /* Spacing */
+  --space-section: 120px;
+  --space-gap: 24px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+
+  /* Layout */
+  --container-max: 1280px;
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Glows */
+  --glow-vivid: 0 0 30px rgba(0, 51, 255, 0.4);
+  --glow-accent: 0 0 20px rgba(74, 186, 255, 0.3);
+
+  /* Navbar */
+  --navbar-height: 72px;
+}
+
+/* ── LIGHT MODE (default) ── */
+[data-theme="light"] {
+  --bg-base: #FFFFFF;
+  --bg-surface-1: #F4F6FA;
+  --bg-surface-2: #E8ECF4;
+  --text-primary: #0A0A1A;
+  --text-secondary: rgba(10, 10, 26, 0.6);
+  --text-muted: rgba(10, 10, 26, 0.35);
+  --border-color: rgba(6, 0, 175, 0.12);
+  --navbar-bg: rgba(255, 255, 255, 0.92);
+  --card-bg: #FFFFFF;
+  --section-alt: #F4F6FA;
+  --footer-bg: #0A0A1A;
+  --footer-text: #FFFFFF;
+  --color-border: rgba(6, 0, 175, 0.12);
+  --color-dark: #FFFFFF;
+  --color-surface-1: #F4F6FA;
+  --color-surface-2: #E8ECF4;
+  --color-text-primary: #0A0A1A;
+  --color-text-secondary: rgba(10, 10, 26, 0.6);
+  --color-text-muted: rgba(10, 10, 26, 0.35);
+}
+
+/* ── DARK MODE ── */
+[data-theme="dark"] {
+  --bg-base: #04002E;
+  --bg-surface-1: #07004A;
+  --bg-surface-2: #0D0550;
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --border-color: rgba(74, 186, 255, 0.15);
+  --navbar-bg: rgba(4, 0, 46, 0.92);
+  --card-bg: #07004A;
+  --section-alt: #060038;
+  --footer-bg: #020018;
+  --footer-text: #FFFFFF;
+  --color-border: rgba(74, 186, 255, 0.15);
+  --color-dark: #04002E;
+  --color-surface-1: #07004A;
+  --color-surface-2: #0D0550;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.35);
+}

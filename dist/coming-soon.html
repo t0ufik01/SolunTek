@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolunTek Catalog — Coming Soon</title>
+    <meta name="description"
+        content="SolunTek is building a comprehensive, searchable catalog of all IT solutions, products, and configurations. Coming soon.">
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/trap');
+
+        /* ── Reset ── */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font: inherit;
+        }
+
+        /* ── Variables ── */
+
+        :root {
+            --color-dark: #04002E;
+            --color-primary: #0600AF;
+            --color-vivid: #0033FF;
+            --color-accent: #4ABAFF;
+            --color-surface-1: #07004A;
+            --color-surface-2: #0D0550;
+            --color-border: rgba(74, 186, 255, 0.15);
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: rgba(255, 255, 255, 0.6);
+            --color-text-muted: rgba(255, 255, 255, 0.35);
+            --font-display: 'Trap', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --radius-md: 12px;
+            --radius-sm: 6px;
+            --glow-accent: 0 0 20px rgba(74, 186, 255, 0.3);
+        }
+
+        /* ── Body ── */
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-dark);
+            color: var(--color-text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .display {
+            font-family: var(--font-display);
+        }
+
+        ::selection {
+            background: rgba(74, 186, 255, 0.3);
+            color: #fff;
+        }
+
+        /* ── Canvas bg ── */
+
+        #cs-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* ── Grid overlay ── */
+
+        .cs-grid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(74, 186, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 186, 255, 0.03) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        /* ── Main container ── */
+
+        .cs-container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px 48px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ── CSS entrance animations ── */
+
+        @keyframes csEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ── Back link ── */
+
+        .cs-back {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            font-size: 14px;
+            color: var(--color-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+            z-index: 10;
+            opacity: 0;
+            animation: csEntrance 0.65s ease 0.1s forwards;
+        }
+
+        .cs-back:hover {
+            color: var(--color-accent);
+        }
+
+        /* ── Logo ── */
+
+        .cs-logo {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: csEntrance 0.65s ease 0.2s forwards;
+        }
+
+        .cs-logo svg {
+            margin: 0 auto;
+        }
+
+        /* ── Eyebrow ── */
+
+        .cs-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: csEntrance 0.65s ease 0.38s forwards;
+        }
+
+        .cs-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            animation: eyebrowPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes eyebrowPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* ── Headline ── */
+
+        .cs-headline {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 7vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--color-text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: csEntrance 0.7s ease 0.5s forwards;
+        }
+
+        /* ── Sub ── */
+
+        .cs-sub {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            opacity: 0;
+            animation: csEntrance 0.65s ease 0.64s forwards;
+        }
+
+        /* ── Feature teasers ── */
+
+        .cs-features {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 48px;
+            width: 100%;
+            max-width: 560px;
+            opacity: 0;
+            animation: csEntrance 0.65s ease 0.79s forwards;
+        }
+
+        @media (min-width: 640px) {
+            .cs-features {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .cs-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 12px;
+            background: rgba(7, 0, 74, 0.65);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.04em;
+            text-align: center;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .cs-feature:hover {
+            border-color: rgba(74, 186, 255, 0.4);
+            background: rgba(7, 0, 74, 0.9);
+        }
+
+        .cs-feature__icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-feature__icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ── Notify / CTA ── */
+
+        .cs-notify {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            opacity: 0;
+            animation: csEntrance 0.65s ease 0.94s forwards;
+        }
+
+        .cs-notify p {
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        /* Button */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out);
+            white-space: nowrap;
+        }
+
+        .btn--primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-vivid));
+            color: #fff;
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.4);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(0, 51, 255, 0.6);
+        }
+
+        /* ── Circuit decorations ── */
+
+        .cs-circuit {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .cs-circuit--tl {
+            top: 0;
+            left: 0;
+        }
+
+        .cs-circuit--br {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* ── Glassy orbs ── */
+
+        .cs-orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(80px);
+        }
+
+        .cs-orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(6, 0, 175, 0.2) 0%, transparent 70%);
+            top: -150px;
+            right: -150px;
+        }
+
+        .cs-orb-2 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(74, 186, 255, 0.07) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/catalog-NraJa2PI.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+</head>
+
+<body class="coming-soon-page">
+
+    <!-- Decorative orbs -->
+    <div class="cs-orb cs-orb-1" aria-hidden="true"></div>
+    <div class="cs-orb cs-orb-2" aria-hidden="true"></div>
+
+    <!-- Canvas background -->
+    <canvas id="cs-canvas" aria-hidden="true"></canvas>
+
+    <!-- Grid overlay -->
+    <div class="cs-grid-overlay" aria-hidden="true"></div>
+
+    <!-- Back link -->
+    <a href="index.html" class="cs-back">
+        ← <span>Back to SolunTek</span>
+    </a>
+
+    <!-- Circuit decorations -->
+    <svg class="cs-circuit cs-circuit--tl" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <path d="M0 100 H60 V40 H140 V80 H200" stroke="rgba(74,186,255,0.15)" stroke-width="1" stroke-dasharray="4 4" />
+        <circle cx="60" cy="100" r="3" fill="rgba(74,186,255,0.3)" />
+        <circle cx="140" cy="40" r="3" fill="rgba(74,186,255,0.3)" />
+    </svg>
+    <svg class="cs-circuit cs-circuit--br" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+        <path d="M200 100 H140 V160 H60 V120 H0" stroke="rgba(74,186,255,0.15)" stroke-width="1"
+            stroke-dasharray="4 4" />
+        <circle cx="140" cy="100" r="3" fill="rgba(74,186,255,0.3)" />
+        <circle cx="60" cy="160" r="3" fill="rgba(74,186,255,0.3)" />
+    </svg>
+
+    <div class="cs-container">
+
+        <!-- Logo -->
+        <div class="cs-logo">
+            <!-- LOGO PLACEHOLDER: assets/icons/soluntek-logo-white.svg -->
+            <svg viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SolunTek"
+                style="height:38px;width:auto;">
+                <path d="M12 4L4 20H11L8 36L22 16H15L20 4H12Z" fill="#4ABAFF" />
+                <text x="30" y="27" fill="white" font-family="Trap, sans-serif" font-weight="700"
+                    font-size="18">SolunTek</text>
+            </svg>
+        </div>
+
+        <!-- Eyebrow -->
+        <div class="cs-eyebrow">
+            <span class="cs-dot" aria-hidden="true"></span>
+            <span>CATALOG IN PREPARATION</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="cs-headline">Something Precise<br>Is Being Engineered.</h1>
+
+        <!-- Sub -->
+        <p class="cs-sub">
+            We are building a structured, searchable catalog of every solution, product, and configuration we deploy.
+            Not a brochure — a technical reference.
+        </p>
+
+        <!-- Feature teasers -->
+        <div class="cs-features">
+            <div class="cs-feature">
+                <div class="cs-feature__icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" stroke="#4ABAFF" stroke-width="1.5" />
+                        <rect x="14" y="3" width="7" height="7" stroke="#4ABAFF" stroke-width="1.5" />
+                        <rect x="3" y="14" width="7" height="7" stroke="#4ABAFF" stroke-width="1.5" />
+                        <rect x="14" y="14" width="7" height="7" stroke="#4ABAFF" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <span>Full Product Reference</span>
+            </div>
+            <div class="cs-feature">
+                <div class="cs-feature__icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8" stroke="#4ABAFF" stroke-width="1.5" />
+                        <path d="M21 21l-3-3" stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <span>Searchable by Domain</span>
+            </div>
+            <div class="cs-feature">
+                <div class="cs-feature__icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M9 12h6M9 16h6M9 8h4" stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#4ABAFF"
+                            stroke-width="1.5" />
+                    </svg>
+                </div>
+                <span>Technical Spec Sheets</span>
+            </div>
+            <div class="cs-feature">
+                <div class="cs-feature__icon">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 2v10l4 4" stroke="#4ABAFF" stroke-width="1.5" stroke-linecap="round" />
+                        <circle cx="12" cy="12" r="9" stroke="#4ABAFF" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <span>Quote Request Integration</span>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cs-notify">
+            <p>Want to be notified when it launches?</p>
+            <a href="index.html#contact" class="btn btn--primary">Contact Us</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
