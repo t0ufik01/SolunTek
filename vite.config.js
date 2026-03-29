@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
-export default defineConfig({
-    base: '/',   // must match your GitHub repo name exactly
+export default defineConfig(({ mode }) => ({
+    base: process.env.VITE_BASE || '/',
     publicDir: 'assets',
     build: {
         outDir: 'dist',
@@ -12,4 +12,4 @@ export default defineConfig({
             }
         }
     }
-})
+}))
