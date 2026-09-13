@@ -24,7 +24,7 @@
     "gh-pages": "^6.3.0",
     "prettier": "^3.9.6",
     "vite": "^7.3.1",
-    "vite-imagetools": "^12.0.1",
+    "vite-imagetools": "^10.0.1",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-sitemap": "^0.8.2"
