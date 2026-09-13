@@ -12,7 +12,7 @@ export function initLang() {
     applyLang(currentLang, false);
 
     // Bind all lang toggle buttons (navbar desktop + navbar mobile)
-    document.querySelectorAll('.lang-toggle__btn').forEach(btn => {
+    document.querySelectorAll('.lang-toggle__btn').forEach((btn) => {
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
             if (lang !== currentLang) {
@@ -35,27 +35,29 @@ function applyLang(lang, animate) {
 
     if (animate) {
         // Fade out all
-        els.forEach(el => {
+        els.forEach((el) => {
             el.style.transition = 'opacity 0.15s ease';
             el.style.opacity = '0';
         });
 
         setTimeout(() => {
             updateTextNodes(els, lang);
-            els.forEach(el => { el.style.opacity = '1'; });
+            els.forEach((el) => {
+                el.style.opacity = '1';
+            });
         }, 150);
     } else {
         updateTextNodes(els, lang);
     }
 
     // Update active buttons
-    document.querySelectorAll('.lang-toggle__btn').forEach(btn => {
+    document.querySelectorAll('.lang-toggle__btn').forEach((btn) => {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
 }
 
 function updateTextNodes(els, lang) {
-    els.forEach(el => {
+    els.forEach((el) => {
         const text = el.getAttribute(`data-${lang}`);
         if (text === null) return;
         // Only update if no significant child elements

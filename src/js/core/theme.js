@@ -21,5 +21,5 @@ export function initTheme() {
     }
 
     if (btn) btn.addEventListener('click', toggle);
-    mobileBtns.forEach(b => b.addEventListener('click', toggle));
+    mobileBtns.forEach((b) => b.addEventListener('click', toggle));
 }

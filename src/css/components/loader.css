@@ -25,11 +25,13 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: repeating-linear-gradient(to bottom,
-            transparent 0px,
-            transparent 3px,
-            rgba(74, 186, 255, 0.03) 3px,
-            rgba(74, 186, 255, 0.03) 4px);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(74, 186, 255, 0.03) 3px,
+        rgba(74, 186, 255, 0.03) 4px
+    );
     animation: scanMove 8s linear infinite;
 }
 
@@ -47,10 +49,10 @@
 }
 
 .preloader__logo .preloader-text {
-    fill: #FFFFFF;
+    fill: var(--text-primary);
 }
 
-[data-theme="light"] .preloader__logo .preloader-text {
+[data-theme='light'] .preloader__logo .preloader-text {
     fill: var(--color-primary);
 }
 
@@ -89,7 +91,7 @@
     overflow: hidden;
 }
 
-[data-theme="light"] .preloader__bar {
+[data-theme='light'] .preloader__bar {
     background: rgba(6, 0, 175, 0.1);
 }
 

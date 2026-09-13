@@ -1,85 +1,114 @@
-/**
- * Contact form handler
- * Success message hidden by default, shown only after successful submit
- */
-export function initContact() {
+import emailjs from '@emailjs/browser';
+
+export function initContactForm() {
     const form = document.getElementById('contactForm');
-    const successEl = document.getElementById('formSuccess');
-
-    // Ensure success hidden on init
-    if (successEl) {
-        successEl.hidden = true;
-        successEl.style.display = 'none';
-        successEl.style.opacity = '0'; // default pre-animation state
-    }
-
     if (!form) return;
+
+    // Initialize EmailJS globally
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+    const formErrorText = document.getElementById('formErrorText');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const btn = form.querySelector('button[type="submit"]');
-        if (!btn) return;
+        const lang = document.documentElement.getAttribute('data-lang') || 'fr';
+        const btnSpan = submitBtn ? submitBtn.querySelector('span') : null;
+        const originalBtnText = btnSpan ? btnSpan.textContent : '';
 
-        // Validate
-        const name = form.querySelector('#cf-name')?.value.trim();
-        const email = form.querySelector('#cf-email')?.value.trim();
-        const message = form.querySelector('#cf-message')?.value.trim();
+        if (formError) {
+            formError.style.display = 'none';
+            formError.setAttribute('hidden', '');
+        }
 
-        if (!name || !email || !message) {
-            shakeForm(form);
+        // 1. Honeypot check
+        const honeypot = form.querySelector('input[name="website"]');
+        if (honeypot && honeypot.value) {
+            console.warn('Bot detected');
+            return; // silently fail
+        }
+
+        // 2. Client-side Validation
+        const emailInput = form.querySelector('input[name="email"]');
+        const nameInput = form.querySelector('input[name="name"]');
+        const messageInput = form.querySelector('textarea[name="message"]');
+
+        if (!emailInput.value || !nameInput.value || !messageInput.value) {
+            showError(
+                lang === 'en'
+                    ? 'Please fill in all required fields.'
+                    : 'Veuillez remplir tous les champs requis.'
+            );
             return;
         }
 
-        if (!isValidEmail(email)) {
-            shakeForm(form);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value)) {
+            showError(
+                lang === 'en'
+                    ? 'Please enter a valid email address.'
+                    : 'Veuillez entrer une adresse email valide.'
+            );
             return;
         }
 
-        // Loading state
-        const originalHTML = btn.innerHTML;
-        btn.disabled = true;
-        btn.innerHTML = `<span data-fr="Envoi en cours..." data-en="Sending...">Envoi en cours...</span>`;
-        btn.style.opacity = '0.7';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            if (btnSpan) {
+                btnSpan.textContent = lang === 'en' ? 'Sending...' : 'Envoi en cours...';
+            }
+        }
 
-        // Simulate send (replace with real fetch when backend is ready)
-        await delay(1200);
+        try {
+            const templateParams = {
+                name: nameInput.value,
+                email: emailInput.value,
+                company: form.querySelector('input[name="company"]').value,
+                phone: form.querySelector('input[name="phone"]').value,
+                message: messageInput.value
+            };
 
-        // Hide form fields
-        form.querySelectorAll('.form-row, .form-field--full').forEach(el => {
-            el.style.transition = 'opacity 0.3s ease';
-            el.style.opacity = '0';
-            el.style.pointerEvents = 'none';
-        });
-        btn.style.display = 'none';
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
 
-        // Show success
-        if (successEl) {
-            successEl.hidden = false;
-            successEl.style.display = 'flex';
-            successEl.style.opacity = '0';
-            successEl.style.transform = 'translateY(10px)';
-
-            setTimeout(() => {
-                successEl.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                successEl.style.opacity = '1';
-                successEl.style.transform = 'none';
-            }, 50);
+            if (formSuccess) {
+                formSuccess.style.display = 'flex';
+                formSuccess.removeAttribute('hidden');
+            }
+            form.reset();
+            if (submitBtn) {
+                submitBtn.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Contact Form Error:', error);
+            showError(
+                lang === 'en'
+                    ? 'An error occurred, please try again or call us directly.'
+                    : 'Une erreur est survenue, réessayez ou appelez-nous directement.'
+            );
+        } finally {
+            if (submitBtn && submitBtn.style.display !== 'none') {
+                submitBtn.disabled = false;
+                if (btnSpan) {
+                    btnSpan.textContent = originalBtnText;
+                }
+            }
         }
     });
-}
 
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function shakeForm(form) {
-    form.classList.remove('shake');
-    void form.offsetWidth; // reflow
-    form.classList.add('shake');
-    setTimeout(() => form.classList.remove('shake'), 500);
-}
-
-function delay(ms) {
-    return new Promise(res => setTimeout(res, ms));
+    function showError(message) {
+        if (formErrorText) {
+            formErrorText.textContent = message;
+        }
+        if (formError) {
+            formError.style.display = 'flex';
+            formError.removeAttribute('hidden');
+        }
+    }
 }

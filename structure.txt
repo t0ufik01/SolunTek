@@ -1,0 +1,297 @@
+Structure du dossier pour le volume Disque local
+Le numéro de série du volume est 000000B4 9E5C:7203
+D:.
++---.github
+¦   +---workflows
++---dist
+¦   +---api
+¦   +---assets
++---node_modules
+¦   +---.bin
+¦   +---.vite
+¦   ¦   +---deps
+¦   +---@esbuild
+¦   ¦   +---win32-x64
+¦   +---@nodelib
+¦   ¦   +---fs.scandir
+¦   ¦   ¦   +---out
+¦   ¦   ¦       +---adapters
+¦   ¦   ¦       +---providers
+¦   ¦   ¦       +---types
+¦   ¦   ¦       +---utils
+¦   ¦   +---fs.stat
+¦   ¦   ¦   +---out
+¦   ¦   ¦       +---adapters
+¦   ¦   ¦       +---providers
+¦   ¦   ¦       +---types
+¦   ¦   +---fs.walk
+¦   ¦       +---out
+¦   ¦           +---providers
+¦   ¦           +---readers
+¦   ¦           +---types
+¦   +---@rollup
+¦   ¦   +---rollup-win32-x64-gnu
+¦   ¦   +---rollup-win32-x64-msvc
+¦   +---@types
+¦   ¦   +---estree
+¦   +---array-union
+¦   +---async
+¦   ¦   +---dist
+¦   ¦   +---internal
+¦   +---braces
+¦   ¦   +---lib
+¦   +---commander
+¦   ¦   +---lib
+¦   ¦   +---typings
+¦   +---commondir
+¦   ¦   +---example
+¦   ¦   +---test
+¦   +---dir-glob
+¦   +---email-addresses
+¦   ¦   +---lib
+¦   ¦   +---test
+¦   +---esbuild
+¦   ¦   +---bin
+¦   ¦   +---lib
+¦   +---escape-string-regexp
+¦   +---fast-glob
+¦   ¦   +---out
+¦   ¦       +---managers
+¦   ¦       +---providers
+¦   ¦       ¦   +---filters
+¦   ¦       ¦   +---matchers
+¦   ¦       ¦   +---transformers
+¦   ¦       +---readers
+¦   ¦       +---types
+¦   ¦       +---utils
+¦   +---fastq
+¦   ¦   +---test
+¦   +---filename-reserved-regex
+¦   +---filenamify
+¦   +---fill-range
+¦   +---find-cache-dir
+¦   +---find-up
+¦   +---fs-extra
+¦   ¦   +---lib
+¦   ¦       +---copy
+¦   ¦       +---empty
+¦   ¦       +---ensure
+¦   ¦       +---fs
+¦   ¦       +---json
+¦   ¦       +---mkdirs
+¦   ¦       +---move
+¦   ¦       +---output-file
+¦   ¦       +---path-exists
+¦   ¦       +---remove
+¦   ¦       +---util
+¦   +---gh-pages
+¦   ¦   +---bin
+¦   ¦   +---lib
+¦   +---glob-parent
+¦   +---globby
+¦   +---graceful-fs
+¦   +---gsap
+¦   ¦   +---dist
+¦   ¦   +---src
+¦   ¦   ¦   +---utils
+¦   ¦   +---types
+¦   ¦   ¦   +---utils
+¦   ¦   +---utils
+¦   +---ignore
+¦   +---is-extglob
+¦   +---is-glob
+¦   +---is-number
+¦   +---jsonfile
+¦   +---locate-path
+¦   +---make-dir
+¦   +---merge2
+¦   +---micromatch
+¦   +---nanoid
+¦   ¦   +---async
+¦   ¦   +---bin
+¦   ¦   +---non-secure
+¦   ¦   +---url-alphabet
+¦   +---p-limit
+¦   +---p-locate
+¦   +---p-try
+¦   +---path-exists
+¦   +---path-type
+¦   +---picocolors
+¦   +---picomatch
+¦   ¦   +---lib
+¦   +---pkg-dir
+¦   +---postcss
+¦   ¦   +---lib
+¦   +---queue-microtask
+¦   +---reusify
+¦   ¦   +---.github
+¦   ¦   ¦   +---workflows
+¦   ¦   +---benchmarks
+¦   +---rollup
+¦   ¦   +---dist
+¦   ¦       +---bin
+¦   ¦       +---es
+¦   ¦       ¦   +---shared
+¦   ¦       +---shared
+¦   +---run-parallel
+¦   +---semver
+¦   ¦   +---bin
+¦   +---slash
+¦   +---source-map-js
+¦   ¦   +---lib
+¦   +---strip-outer
+¦   +---three
+¦   ¦   +---build
+¦   ¦   +---examples
+¦   ¦   ¦   +---fonts
+¦   ¦   ¦   ¦   +---droid
+¦   ¦   ¦   ¦   +---MPLUSRounded1c
+¦   ¦   ¦   ¦   +---ttf
+¦   ¦   ¦   +---jsm
+¦   ¦   ¦       +---animation
+¦   ¦   ¦       +---capabilities
+¦   ¦   ¦       +---controls
+¦   ¦   ¦       +---csm
+¦   ¦   ¦       +---curves
+¦   ¦   ¦       +---effects
+¦   ¦   ¦       +---environments
+¦   ¦   ¦       +---exporters
+¦   ¦   ¦       +---geometries
+¦   ¦   ¦       +---gpgpu
+¦   ¦   ¦       +---helpers
+¦   ¦   ¦       +---inspector
+¦   ¦   ¦       ¦   +---tabs
+¦   ¦   ¦       ¦   +---ui
+¦   ¦   ¦       +---interactive
+¦   ¦   ¦       +---libs
+¦   ¦   ¦       ¦   +---basis
+¦   ¦   ¦       ¦   +---draco
+¦   ¦   ¦       ¦   ¦   +---gltf
+¦   ¦   ¦       ¦   +---rhino3dm
+¦   ¦   ¦       +---lighting
+¦   ¦   ¦       +---lights
+¦   ¦   ¦       +---lines
+¦   ¦   ¦       ¦   +---webgpu
+¦   ¦   ¦       +---loaders
+¦   ¦   ¦       ¦   +---lwo
+¦   ¦   ¦       ¦   +---usd
+¦   ¦   ¦       +---materials
+¦   ¦   ¦       +---math
+¦   ¦   ¦       +---misc
+¦   ¦   ¦       +---modifiers
+¦   ¦   ¦       +---objects
+¦   ¦   ¦       +---offscreen
+¦   ¦   ¦       +---physics
+¦   ¦   ¦       +---postprocessing
+¦   ¦   ¦       +---renderers
+¦   ¦   ¦       +---shaders
+¦   ¦   ¦       +---textures
+¦   ¦   ¦       +---transpiler
+¦   ¦   ¦       +---tsl
+¦   ¦   ¦       ¦   +---display
+¦   ¦   ¦       ¦   +---lighting
+¦   ¦   ¦       ¦   +---math
+¦   ¦   ¦       ¦   +---shadows
+¦   ¦   ¦       ¦   +---utils
+¦   ¦   ¦       +---utils
+¦   ¦   ¦       +---webxr
+¦   ¦   +---src
+¦   ¦       +---animation
+¦   ¦       ¦   +---tracks
+¦   ¦       +---audio
+¦   ¦       +---cameras
+¦   ¦       +---core
+¦   ¦       +---extras
+¦   ¦       ¦   +---core
+¦   ¦       ¦   +---curves
+¦   ¦       ¦   +---lib
+¦   ¦       +---geometries
+¦   ¦       +---helpers
+¦   ¦       +---lights
+¦   ¦       ¦   +---webgpu
+¦   ¦       +---loaders
+¦   ¦       ¦   +---nodes
+¦   ¦       +---materials
+¦   ¦       ¦   +---nodes
+¦   ¦       ¦       +---manager
+¦   ¦       +---math
+¦   ¦       ¦   +---interpolants
+¦   ¦       +---nodes
+¦   ¦       ¦   +---accessors
+¦   ¦       ¦   +---code
+¦   ¦       ¦   +---core
+¦   ¦       ¦   +---display
+¦   ¦       ¦   +---fog
+¦   ¦       ¦   +---functions
+¦   ¦       ¦   ¦   +---BSDF
+¦   ¦       ¦   ¦   +---material
+¦   ¦       ¦   +---geometry
+¦   ¦       ¦   +---gpgpu
+¦   ¦       ¦   +---lighting
+¦   ¦       ¦   +---materialx
+¦   ¦       ¦   ¦   +---lib
+¦   ¦       ¦   +---math
+¦   ¦       ¦   +---parsers
+¦   ¦       ¦   +---pmrem
+¦   ¦       ¦   +---procedural
+¦   ¦       ¦   +---shapes
+¦   ¦       ¦   +---tsl
+¦   ¦       ¦   +---utils
+¦   ¦       +---objects
+¦   ¦       +---renderers
+¦   ¦       ¦   +---common
+¦   ¦       ¦   ¦   +---extras
+¦   ¦       ¦   ¦   +---nodes
+¦   ¦       ¦   +---shaders
+¦   ¦       ¦   ¦   +---ShaderChunk
+¦   ¦       ¦   ¦   +---ShaderLib
+¦   ¦       ¦   +---webgl
+¦   ¦       ¦   +---webgl-fallback
+¦   ¦       ¦   ¦   +---nodes
+¦   ¦       ¦   ¦   +---utils
+¦   ¦       ¦   +---webgpu
+¦   ¦       ¦   ¦   +---nodes
+¦   ¦       ¦   ¦   +---utils
+¦   ¦       ¦   +---webxr
+¦   ¦       +---scenes
+¦   ¦       +---textures
+¦   +---tinyglobby
+¦   ¦   +---dist
+¦   ¦   +---node_modules
+¦   ¦       +---fdir
+¦   ¦       ¦   +---dist
+¦   ¦       +---picomatch
+¦   ¦           +---lib
+¦   +---to-regex-range
+¦   +---trim-repeated
+¦   +---universalify
+¦   +---vite
+¦       +---bin
+¦       +---dist
+¦       ¦   +---client
+¦       ¦   +---node
+¦       ¦       +---chunks
+¦       +---misc
+¦       +---node_modules
+¦       ¦   +---fdir
+¦       ¦   ¦   +---dist
+¦       ¦   +---picomatch
+¦       ¦       +---lib
+¦       +---types
+¦           +---internal
++---public
+¦   +---api
++---src
+    +---assets
+    ¦   +---icons
+    ¦   +---images
+    ¦   +---partners
+    +---css
+    ¦   +---base
+    ¦   +---components
+    ¦   +---pages
+    +---js
+        +---core
+        +---effects
+        +---modules
+        +---utils

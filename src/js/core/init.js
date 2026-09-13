@@ -1,8 +1,9 @@
 import { initAnimations } from '../modules/animations.js';
 import { initLang } from '../modules/lang.js';
-import { initContact } from '../modules/contact.js';
+import { initContactForm } from '../modules/contact.js';
 import { initCarousel } from '../modules/carousel.js';
 import { initTheme } from './theme.js';
+import { initData } from '../modules/data.js';
 
 export function initApp() {
     initTheme();
@@ -58,11 +59,15 @@ function runPreloader() {
 function exitPreloader(preloader) {
     preloader.classList.add('exit');
 
-    preloader.addEventListener('animationend', () => {
-        preloader.style.display = 'none';
-        document.body.classList.remove('is-loading');
-        finishLoad();
-    }, { once: true });
+    preloader.addEventListener(
+        'animationend',
+        () => {
+            preloader.style.display = 'none';
+            document.body.classList.remove('is-loading');
+            finishLoad();
+        },
+        { once: true }
+    );
 }
 
 // ── POST-LOAD INIT ─────────────────────────────
@@ -71,11 +76,14 @@ function finishLoad() {
 
     // Background is handled by pure CSS now.
 
+    // Data injection
+    initData();
+
     // GSAP animations
     initAnimations();
 
     // Contact form
-    initContact();
+    initContactForm();
 
     // Partners marquee
     initCarousel();
@@ -114,7 +122,7 @@ function initNavbar() {
         });
 
         // Close on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        mobileMenu.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('open');
                 mobileMenu.classList.remove('open');
@@ -124,8 +132,8 @@ function initNavbar() {
     }
 
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
             const id = a.getAttribute('href');
             if (id === '#') return;
             const target = document.querySelector(id);

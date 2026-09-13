@@ -12,7 +12,8 @@ body {
     background-color: var(--bg-base);
     color: var(--text-primary);
     overflow-x: hidden;
-    transition: background-color var(--duration-base) var(--ease-out),
+    transition:
+        background-color var(--duration-base) var(--ease-out),
         color var(--duration-base) var(--ease-out);
 }
 
@@ -22,49 +23,52 @@ body {
 /* Dots are tiny (1px), spaced 28px apart, color is the brand blue at very low opacity */
 
 /* LIGHT MODE */
-[data-theme="light"] body {
-    background-color: #FFFFFF;
-    background-image:
-        radial-gradient(circle, rgba(6, 0, 175, 0.12) 1px, transparent 1px);
+[data-theme='light'] body {
+    background-color: var(--bg-base);
+    background-image: radial-gradient(circle, rgba(6, 0, 175, 0.12) 1px, transparent 1px);
     background-size: 28px 28px;
 }
 
 /* DARK MODE */
-[data-theme="dark"] body {
-    background-color: #04002E;
-    background-image:
-        radial-gradient(circle, rgba(74, 186, 255, 0.08) 1px, transparent 1px);
+[data-theme='dark'] body {
+    background-color: var(--bg-base);
+    background-image: radial-gradient(circle, rgba(74, 186, 255, 0.08) 1px, transparent 1px);
     background-size: 28px 28px;
 }
 
 /* Hero section: add a soft radial glow on top of the dot grid */
 /* Light mode hero */
-[data-theme="light"] .hero {
+[data-theme='light'] .hero {
     background:
         radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0, 51, 255, 0.06) 0%, transparent 70%),
         radial-gradient(circle, rgba(6, 0, 175, 0.12) 1px, transparent 1px);
-    background-size: auto, 28px 28px;
-    background-color: #FFFFFF;
+    background-size:
+        auto,
+        28px 28px;
+    background-color: var(--bg-base);
 }
 
 /* Dark mode hero */
-[data-theme="dark"] .hero {
+[data-theme='dark'] .hero {
     background:
         radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0, 51, 255, 0.15) 0%, transparent 70%),
         radial-gradient(ellipse 50% 40% at 20% 70%, rgba(74, 186, 255, 0.06) 0%, transparent 60%),
         radial-gradient(circle, rgba(74, 186, 255, 0.08) 1px, transparent 1px);
-    background-size: auto, auto, 28px 28px;
-    background-color: #04002E;
+    background-size:
+        auto,
+        auto,
+        28px 28px;
+    background-color: var(--bg-base);
 }
 
 /* Section alternation stays clean — no texture on alt sections, just flat color */
-[data-theme="light"] .section-alt {
-    background-color: #F4F6FA;
+[data-theme='light'] .section-alt {
+    background-color: var(--section-alt);
     background-image: none;
 }
 
-[data-theme="dark"] .section-alt {
-    background-color: #060038;
+[data-theme='dark'] .section-alt {
+    background-color: var(--section-alt);
     background-image: none;
 }
 
@@ -81,11 +85,11 @@ body.is-loading {
     display: block !important;
 }
 
-[data-theme="light"] .logo-light {
+[data-theme='light'] .logo-light {
     display: block !important;
 }
 
-[data-theme="light"] .logo-dark {
+[data-theme='light'] .logo-dark {
     display: none !important;
 }
 
@@ -151,7 +155,7 @@ h4,
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--text-accent);
     margin-bottom: 16px;
 }
 
@@ -189,7 +193,7 @@ h4,
 
 .btn--primary {
     background: linear-gradient(135deg, var(--color-primary), var(--color-vivid));
-    color: #FFFFFF;
+    color: #ffffff;
     box-shadow: var(--glow-vivid);
 }
 
@@ -204,12 +208,12 @@ h4,
 
 .btn--ghost {
     background: transparent;
-    color: var(--color-accent);
+    color: var(--text-accent);
     border: 1px solid var(--border-color);
 }
 
 .btn--ghost:hover {
-    border-color: var(--color-accent);
+    border-color: var(--text-accent);
     background: rgba(74, 186, 255, 0.08);
     box-shadow: var(--glow-accent);
 }
@@ -252,7 +256,9 @@ h4,
     z-index: 1000;
     transform: translateX(-120px);
     opacity: 0;
-    transition: transform 0.5s var(--ease-out), opacity 0.5s;
+    transition:
+        transform 0.5s var(--ease-out),
+        opacity 0.5s;
 }
 
 .whatsapp-float.visible {
@@ -264,12 +270,14 @@ h4,
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #25D366;
+    background: #25d366;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
     cursor: pointer;
     animation: wpPulse 3s ease-in-out infinite;
 }
@@ -304,7 +312,9 @@ h4,
     opacity: 0;
     pointer-events: none;
     border: 1px solid var(--border-color);
-    transition: opacity 0.2s, transform 0.2s;
+    transition:
+        opacity 0.2s,
+        transform 0.2s;
 }
 
 .whatsapp-float:hover .whatsapp-float__tooltip {
@@ -313,14 +323,15 @@ h4,
 }
 
 @keyframes wpPulse {
-
     0%,
     100% {
         box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
     }
 
     50% {
-        box-shadow: 0 0 35px rgba(37, 211, 102, 0.7), 0 0 50px rgba(37, 211, 102, 0.2);
+        box-shadow:
+            0 0 35px rgba(37, 211, 102, 0.7),
+            0 0 50px rgba(37, 211, 102, 0.2);
     }
 }
 
@@ -329,7 +340,9 @@ h4,
 .reveal-left,
 .reveal-right {
     opacity: 0;
-    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    transition:
+        opacity 0.7s var(--ease-out),
+        transform 0.7s var(--ease-out);
 }
 
 .reveal-up {
@@ -358,7 +371,7 @@ h4,
 }
 
 /* ---- Light mode: section alternates ---- */
-[data-theme="light"] .section-alt-bg {
+[data-theme='light'] .section-alt-bg {
     background: var(--section-alt);
 }
 
@@ -369,9 +382,13 @@ h4,
 }
 
 :focus-visible {
-    outline: 2px solid rgba(74, 186, 255, 0.6);
+    outline: 2px solid var(--color-vivid); /* Vivid blue works reasonably well, or better we use a dynamic variable but let's stick to vivid for now */
     outline-offset: 3px;
     border-radius: 3px;
+}
+
+[data-theme='dark'] :focus-visible {
+    outline-color: var(--text-accent);
 }
 
 /* ---- Responsive ---- */
