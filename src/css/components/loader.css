@@ -6,12 +6,25 @@
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: var(--preloader-bg);
+    /* Hardcoded brand hex — intentional: CSS variables may not be resolved yet
+       when the preloader first paints (before theme class is applied to <html>). */
+    background: linear-gradient(
+        135deg,
+        #030712 0%,
+        #0600AF 35%,
+        #0033FF 65%,
+        #4ABAFF 100%
+    );
+    background-size: 300% 300%;
+    animation: preloaderGradient 6s ease-in-out infinite alternate;
+    will-change: background-position;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 32px;
+    /* Smooth fade-out driven by JS (opacity transition) */
+    transition: opacity 0.3s ease-out;
 }
 
 .preloader__bg {
@@ -40,7 +53,7 @@
     position: relative;
     z-index: 1;
     opacity: 0;
-    animation: logoFadeIn 0.4s var(--ease-out) 0.2s forwards;
+    animation: logoFadeIn 1s var(--ease-out) 0.2s forwards;
 }
 
 .preloader__logo .preloader-logo-svg {
@@ -68,7 +81,8 @@
 .preloader__label {
     font-family: var(--font-display);
     font-size: 11px;
-    color: var(--text-muted);
+    /* Hardcoded — must be readable on the dark gradient at all times */
+    color: rgba(255, 255, 255, 0.55);
     letter-spacing: 0.3em;
     text-transform: uppercase;
 }
@@ -99,7 +113,7 @@
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    transition: width 0.1s linear;
+    transition: width 1.2s linear;
     border-radius: 1px;
 }
 
@@ -111,15 +125,19 @@
     font-variant-numeric: tabular-nums;
 }
 
-/* Exit animation */
+/* Exit — JS adds .exit class, then we switch to opacity for the final fade */
 .preloader.exit {
-    animation: preloaderExit 0.7s var(--ease-in-out) forwards;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Keyframes */
-@keyframes preloaderExit {
-    to {
-        transform: translateY(-100%);
+@keyframes preloaderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
     }
 }
 

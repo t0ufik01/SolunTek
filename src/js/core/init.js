@@ -24,9 +24,29 @@ function runPreloader() {
 
     document.body.classList.add('is-loading');
 
-    let progress = 0;
-    const duration = 1500; // ms
+    // Guard: only exit once (load event and failsafe race each other)
+    let exited = false;
+    function triggerExit() {
+        if (exited) return;
+        exited = true;
+        // Snap bar to 100% before fading out
+        if (barFill) barFill.style.width = '100%';
+        if (counter) counter.textContent = '100%';
+        // Small pause so the user sees 100% before the fade
+        setTimeout(() => exitPreloader(preloader), 200);
+    }
+
+    // ── Primary exit trigger: page fully loaded ──
+    window.addEventListener('load', triggerExit, { once: true });
+
+    // ── Failsafe: force-hide after 4 seconds max ──
+    // Prevents the preloader from blocking the user if window.onload hangs
+    // (e.g. a slow third-party resource, a stalled network request, etc.)
+    const failsafeTimer = setTimeout(triggerExit, 4000);
+
+    // ── Visual progress bar (cosmetic — runs in parallel with real load) ──
     let startTime = null;
+    const duration = 1500; // ms — visual sweep, not tied to actual load state
 
     function easeOutQuart(x) {
         return 1 - Math.pow(1 - x, 4);
@@ -37,30 +57,31 @@ function runPreloader() {
         const elapsed = now - startTime;
         let t = Math.min(elapsed / duration, 1);
 
-        progress = easeOutQuart(t) * 100;
+        const displayPct = Math.min(Math.round(easeOutQuart(t) * 100), 99); // cap at 99%
 
-        const displayPct = Math.min(Math.round(progress), 100);
-
-        if (barFill) barFill.style.width = displayPct + '%';
-        if (counter) counter.textContent = displayPct + '%';
-
-        if (t === 1) {
-            setTimeout(() => exitPreloader(preloader), 150); // tiny pause at 100%
-            return;
+        if (!exited) {
+            // Hold at 99% — triggerExit() snaps to 100% and fades out
+            if (barFill) barFill.style.width = displayPct + '%';
+            if (counter) counter.textContent = displayPct + '%';
         }
 
-        requestAnimationFrame(tick);
+        if (t < 1 && !exited) {
+            requestAnimationFrame(tick);
+        }
     }
 
-    // Small initial delay so the logo animation plays first
+    // Small initial delay so the logo fade-in animation plays first
     setTimeout(() => requestAnimationFrame(tick), 300);
+
+    // Clean up the failsafe if load fires first
+    window.addEventListener('load', () => clearTimeout(failsafeTimer), { once: true });
 }
 
 function exitPreloader(preloader) {
-    preloader.classList.add('exit');
+    preloader.classList.add('exit'); // triggers opacity: 0 transition in CSS
 
     preloader.addEventListener(
-        'animationend',
+        'transitionend',
         () => {
             preloader.style.display = 'none';
             document.body.classList.remove('is-loading');

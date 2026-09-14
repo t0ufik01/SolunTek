@@ -535,6 +535,15 @@ h4,
         animation: none;
     }
 
+    /* ── Preloader gradient: freeze at midpoint (deep brand blue, fully readable) ── */
+    .preloader {
+        animation: none;
+        background-position: 50% 50%;
+        /* Instant exit when JS triggers — no 600ms fade for motion-sensitive users */
+        transition-duration: 0.01ms !important;
+    }
+
+
     /* ── Reveal elements: show immediately (no entrance animation) ── */
     .reveal-up,
     .reveal-left,
