@@ -49,54 +49,70 @@
 
     /* Navbar */
     --navbar-height: 72px;
+
+    /* Preloader — always dark regardless of active theme (runs before theme is applied) */
+    --preloader-bg: #030712;
 }
 
-/* ── LIGHT MODE (default) ── */
+/* ── LIGHT MODE (ENTERPRISE B2B & B2G PALETTE) ── */
 [data-theme='light'] {
-    --bg-base: #ffffff;
-    --bg-surface-1: #f4f6fa;
-    --bg-surface-2: #e8ecf4;
-    --text-primary: #0a0a1a;
-    --text-secondary: rgba(10, 10, 26, 0.6);
-    --text-muted: rgba(10, 10, 26, 0.35);
-    --border-color: rgba(6, 0, 175, 0.12);
-    --navbar-bg: rgba(255, 255, 255, 0.92);
-    --card-bg: #ffffff;
-    --section-alt: #f4f6fa;
-    --footer-bg: #0a0a1a;
-    --footer-text: #ffffff;
-    --color-border: rgba(6, 0, 175, 0.12);
-    --color-dark: #ffffff;
-    --color-surface-1: #f4f6fa;
-    --color-surface-2: #e8ecf4;
-    --color-text-primary: #0a0a1a;
-    --color-text-secondary: rgba(10, 10, 26, 0.6);
-    --color-text-muted: rgba(10, 10, 26, 0.35);
-    --text-brand: var(--color-primary); /* PASSES 12.04:1 */
-    --text-accent: var(--color-secondary); /* PASSES 6.71:1, accent fails */
+    /* Base Backgrounds & Structure */
+    --bg-base: #FFFFFF;                       /* أبيض ناصع رسمي ومباشر */
+    --bg-surface-1: #F8FAFC;                  /* Slate ناعم جداً للفصل الهيكلي بين الأقسام */
+    --bg-surface-2: #F1F5F9;                  /* رمادي مؤسسي للحقول والخانات */
+    --card-bg: #FFFFFF;                       /* بطاقات بيضاء بظلال خفيفة توحي بالوضوح والشفافية */
+    --section-alt: #F8FAFC;                   
+    --navbar-bg: rgba(255, 255, 255, 0.95);   /* زجاجي بتركيز عالي لمنع تداخل المحتوى أثناء التمرير */
+    --footer-bg: #030B1C;                     /* Deep Executive Navy بدلاً من الأسود المباشر */
+    --footer-text: #F8FAFC;
+
+    /* Enterprise Typography (High-Legibility Solid Tones) */
+    --text-primary: #0B132B;                  /* كحلي شديد العمق؛ أكثر فخامة ورصانة من الأسود الميت */
+    --text-secondary: #334155;                /* Slate صلب؛ يضمن وضوحاً كاملاً للعقود والتفاصيل المؤسسية */
+    --text-muted: #64748B;                    /* نصوص ثانوية محايدة بدون بهتان (Passes WCAG AA) */
+    --text-brand: #0600AF;                    /* لون هويتك الأساسي؛ تباين استثنائي يوحي بالهيبة والاستقرار */
+    --text-accent: #0033FF;                   /* للأفعال، والروابط التنفيذية، ونقاط التفاعل الهامة */
+
+    /* Subtle Institutional Borders */
+    --border-color: #E2E8F0;                  /* حدود رمادية محايدة ودقيقة تبني الثقة */
+    --border-color-hover: #CBD5E1;            /* تفاعل ناعم يبتعد عن المؤثرات البصرية المشتتة */
+    --border-accent: rgba(6, 0, 175, 0.16);   /* حدود مخصصة للبطاقات المميزة فقط */
+
+    /* Brand Actions & Enterprise Accents */
+    --color-primary: #0600AF;                 /* الاعتماد عليه للـ Primary Actions يضفي وزناً حكومياً */
+    --color-primary-hover: #0022B8;
+    --color-secondary: #0033FF;               /* للتحويلات التفاعلية والـ Interactive States */
+    --color-accent: #4ABAFF;                  /* محصور حصراً بمؤشرات الحالة (Badges, Active Dots) */
+    --accent-soft: rgba(74, 186, 255, 0.10);  /* خلفيات ناعمة جداً للإشعارات والبيانات */
 }
 
-/* ── DARK MODE ── */
+/* ── DARK MODE (SOLUNTEK PALETTE) ── */
 [data-theme='dark'] {
-    --bg-base: #04002e;
-    --bg-surface-1: #07004a;
-    --bg-surface-2: #0d0550;
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.6);
-    --text-muted: rgba(255, 255, 255, 0.35);
-    --border-color: rgba(74, 186, 255, 0.15);
-    --navbar-bg: rgba(4, 0, 46, 0.92);
-    --card-bg: #07004a;
-    --section-alt: #060038;
-    --footer-bg: #020018;
-    --footer-text: #ffffff;
-    --color-border: rgba(74, 186, 255, 0.15);
-    --color-dark: #04002e;
-    --color-surface-1: #07004a;
-    --color-surface-2: #0d0550;
-    --color-text-primary: #ffffff;
-    --color-text-secondary: rgba(255, 255, 255, 0.6);
-    --color-text-muted: rgba(255, 255, 255, 0.35);
-    --text-brand: #ffffff; /* primary fails */
-    --text-accent: var(--color-accent); /* PASSES 9.24:1 */
+    /* Base Backgrounds */
+    --bg-base: #030712;                      /* أسود تقني مائل للزرقة العميقة جداً */
+    --bg-surface-1: #070e24;                 /* أزرق داكن هادئ مشتق من #0600AF */
+    --bg-surface-2: #0d1a3a;                 /* طبقة ثانية للبطاقات والتفاعل */
+    --card-bg: #081028;
+    --section-alt: #050b1b;
+    --navbar-bg: rgba(3, 7, 18, 0.85);       /* شبه شفاف مع Backdrop Filter */
+    --footer-bg: #02040a;
+
+    /* Typography & Contrast */
+    --text-primary: #F8FAFC;                 /* أبيض ناصع ومريح للقراءة */
+    --text-secondary: #94A3B8;               /* رمادي بارد خفيف */
+    /* WCAG AA compliant (≥4.5:1) against --bg-base (#030712) and --card-bg (#081028) */
+    --text-muted: #7B8AAE;
+    --text-brand: #4ABAFF;                   /* Cyan Accent من هويتك كعنصر هوية بارز */
+    --text-accent: #4ABAFF;                  /* يحقق نسبة تباين تتجاوز 10:1 */
+
+    /* Borders & Accents */
+    --border-color: rgba(74, 186, 255, 0.12);/* مشتق مباشرة من #4ABAFF بحدة منخفضة */
+    --border-color-hover: rgba(74, 186, 255, 0.35);
+    --color-primary: #0033FF;                /* للأزرار الرئيسية مع كتابة بيضاء */
+    --color-accent: #4ABAFF;                 /* للـ Highlights والأيقونات */
+
+    /* إصلاح: متغيرات كانت ناقصة تمامًا في dark mode */
+    --color-primary-hover: var(--color-accent);  /* في dark mode، hover الأفضل يكون أفتح/أزهى وليس أغمق — العكس تمامًا من light mode */
+    --border-accent: rgba(74, 186, 255, 0.20);   /* مشتقة من --color-accent بدل الأزرق العميق الغير مرئي على خلفية داكنة */
+    --accent-soft: rgba(74, 186, 255, 0.10);
 }

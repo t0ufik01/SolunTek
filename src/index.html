@@ -48,6 +48,10 @@
             }
         </script>
 
+        <!-- Google Fonts preconnect — speeds up Inter load (TCP+TLS warm-up before CSS is fetched) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
         <!-- Vite entry — theme applied immediately inside app.js -->
         <script type="module" src="./js/app.js"></script>
     </head>
@@ -1841,8 +1845,41 @@
             </section>
 
             <!-- ═══════════════════════════════════════════
-         SECTION 6: CONTACT
-    ═══════════════════════════════════════════ -->
+                 SECTION: B2G COMPLIANCE
+            ═══════════════════════════════════════════ -->
+            <section id="b2g" class="b2g section-padded section-alt-bg">
+                <div class="container">
+                    <div class="section-header reveal-up">
+                        <div class="section-eyebrow" data-fr="Conformité" data-en="Compliance">Conformité</div>
+                        <h2 class="section-title" data-fr="Secteur Public & Appels d'Offres" data-en="Public Sector & Tenders">Secteur Public & Appels d'Offres</h2>
+                        <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-muted);"
+                           data-fr="Conformité administrative et rigueur technique pour les marchés publics algériens."
+                           data-en="Administrative compliance and technical rigor for Algerian public procurement.">
+                           Conformité administrative et rigueur technique pour les marchés publics algériens.
+                        </p>
+                    </div>
+                    <div class="b2g__content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-gap); max-width: 900px; margin: 0 auto;">
+                        <div class="pillar-card reveal-up">
+                            <h3 data-fr="Respect du Cahier des Charges" data-en="Specification Compliance">Respect du Cahier des Charges</h3>
+                            <p data-fr="Nous fournissons des devis détaillés et des propositions techniques structurées qui répondent strictement aux exigences administratives de vos appels d'offres." 
+                               data-en="We provide detailed quotes and structured technical proposals that strictly meet the administrative requirements of your tenders.">
+                               Nous fournissons des devis détaillés et des propositions techniques structurées qui répondent strictement aux exigences administratives de vos appels d'offres.
+                            </p>
+                        </div>
+                        <div class="pillar-card reveal-up">
+                            <h3 data-fr="Transparence Administrative" data-en="Administrative Transparency">Transparence Administrative</h3>
+                            <p data-fr="Facturation 100% conforme. Dossier légal complet fourni sur demande : Registre de Commerce, NIF, NIS, et agréments spécifiques (ex: ART pour les installations de sécurité)."
+                               data-en="100% compliant billing. Complete legal file provided upon request: Commercial Register, NIF, NIS, and specific approvals (e.g. ART for security installations).">
+                               Facturation 100% conforme. Dossier légal complet fourni sur demande : Registre de Commerce, NIF, NIS, et agréments spécifiques (ex: ART pour les installations de sécurité).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════
+                 SECTION 6: CONTACT
+            ═══════════════════════════════════════════ -->
             <section id="contact" class="contact section-padded">
                 <div class="section-separator"></div>
 

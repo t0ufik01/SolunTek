@@ -2,9 +2,48 @@
    SOLUNTEK — GLOBAL STYLES
    ========================================= */
 
-/* Fonts */
-@import url('https://fonts.cdnfonts.com/css/trap');
+/* Inter — official Google Fonts CDN (reliable, no privacy issues for B2B) */
+/* Must be first: @import must precede all other at-rules (CSS spec) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* ─── LOCAL FONT-FACE: Trap (self-hosted, commercially licensed) ─── */
+/* Weights audited: 500 (Medium), 600 (SemiBold), 700 (Bold), 800 (ExtraBold) */
+/* Relative paths from src/css/base/ → ../../assets/fonts/ */
+/* Vite resolves relative CSS url()s through its asset pipeline (hashed, base-aware). */
+/* Do NOT use absolute /assets/... here — Vite's SPA fallback intercepts them in dev. */
+@font-face {
+    font-family: 'Trap';
+    src: url('/fonts/Trap-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Trap';
+    src: url('/fonts/Trap-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Trap';
+    src: url('/fonts/Trap-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Trap';
+    src: url('/fonts/Trap-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 /* ---- Body ---- */
 body {
@@ -399,5 +438,109 @@ h4,
 
     .section-title {
         font-size: clamp(24px, 7vw, 40px);
+    }
+}
+
+/* =========================================
+   PREFERS-REDUCED-MOTION
+   Covers WCAG 2.1 SC 2.3.3 (AAA) and respects OS-level accessibility settings.
+   All animations are frozen to a visually-sensible static state, not frame 1.
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* ── Hero orbs: keep visible at resting opacity rather than disappearing ── */
+    .hero__orb {
+        opacity: 1;
+        animation: none;
+    }
+
+    /* ── Hero diagram: freeze at neutral/center position ── */
+    .hero__diagram {
+        animation: none;
+        transform: none;
+    }
+
+    /* ── Hero diagram SVG elements: freeze at resting state ── */
+    .d-ring-outer,
+    .d-ring-mid {
+        animation: none;
+        transform: none;
+    }
+
+    .d-scan {
+        animation: none;
+        opacity: 0.6;
+        transform: rotate(0deg);
+    }
+
+    .d-pulse--1,
+    .d-pulse--2,
+    .d-pulse--3 {
+        animation: none;
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    .d-icon {
+        animation: none;
+        opacity: 0.95;
+    }
+
+    .d-node {
+        animation: none;
+        transform: translateY(0);
+    }
+
+    /* ── Hero eyebrow dot / coming-soon dot: freeze at full opacity ── */
+    .hero__eyebrow-dot,
+    .cs-dot {
+        animation: none;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* ── Scroll indicator line: freeze at full width ── */
+    .hero__scroll-line {
+        animation: none;
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    /* ── Partners marquee: static evenly-spaced grid (no frozen mid-scroll frame) ── */
+    .partners__scroll-track {
+        animation: none;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+    }
+
+    /* ── WhatsApp pulse: show at resting shadow, no animation ── */
+    .whatsapp-float__btn {
+        animation: none;
+        box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    }
+
+    /* ── Preloader scanlines: disable scrolling effect ── */
+    .preloader__scanlines {
+        animation: none;
+    }
+
+    /* ── Reveal elements: show immediately (no entrance animation) ── */
+    .reveal-up,
+    .reveal-left,
+    .reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

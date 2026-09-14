@@ -17,6 +17,15 @@ export function initAnimations() {
                 el.style.opacity = '1';
                 el.style.transform = 'translate(0, 0)';
             });
+
+        // Ensure stat counters reflect final values immediately
+        const statNums = document.querySelectorAll('.stat-card__num[data-count]');
+        statNums.forEach(el => {
+            const target = el.getAttribute('data-count');
+            const suffix = el.getAttribute('data-suffix') || '';
+            el.textContent = target + suffix;
+        });
+
         return; // Skip complex GSAP setup
     }
 

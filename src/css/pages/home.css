@@ -198,30 +198,9 @@
     justify-content: center;
 }
 
-.hero__diagram {
-    width: 100%;
-    max-width: 480px;
-    animation: floatDiagram 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 24px rgba(74, 186, 255, 0.2));
-}
-
-[data-theme='light'] .hero__diagram {
-    filter: drop-shadow(0 0 24px rgba(6, 0, 175, 0.15));
-}
-
-@keyframes floatDiagram {
-    0%,
-    100% {
-        transform: translateY(-8px);
-    }
-
-    50% {
-        transform: translateY(8px);
-    }
-}
-
 /* ═══════════════════════════════════════════
-   HERO DIAGRAM — v3
+   HERO DIAGRAM — v3 (canonical, single declaration)
+   First version removed: was dead code overridden by this block.
 ═══════════════════════════════════════════ */
 
 .hero__diagram {
@@ -641,16 +620,28 @@
     line-height: 1.2;
 }
 
+/*
+ * B2B/B2G POLISH: Softened from alarm-red to muted amber.
+ * Still communicates 'a stated challenge' but avoids the warning-label
+ * reading that can feel aggressive to B2G procurement officers.
+ * Visual-weight change only — copy is untouched.
+ *
+ * Option A (implemented): Muted amber — warm, professional, not alarming.
+ * Option B alternative (commented): Uppercase slate with letter-spacing only.
+ *   color: var(--text-secondary); (and remove text-transform/letter-spacing overrides)
+ */
 .service-card__problem {
     font-size: 11px;
-    color: rgba(200, 50, 50, 0.85);
+    /* Muted amber: desaturated enough to read as 'context', not 'alarm' */
+    color: rgba(180, 110, 30, 0.80);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
 }
 
 [data-theme='dark'] .service-card__problem {
-    color: rgba(255, 100, 100, 0.85);
+    /* Warm amber in dark mode: slightly brighter but still restrained */
+    color: rgba(210, 155, 60, 0.85);
 }
 
 .service-card__solution {

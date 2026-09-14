@@ -12,7 +12,7 @@
 }
 
 [data-theme='dark'] .coming-soon-page {
-    background: var(--color-dark);
+    background: var(--bg-base);
 }
 
 /* ── Canvas bg ── */
