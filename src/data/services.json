@@ -3,40 +3,35 @@
     "id": "network",
     "icon": "globe",
     "titleFr": "Réseau & Câblage",
-    "titleEn": "Network & Cabling",
     "descFr": "Infrastructure réseau certifiée, câblage structuré FTP Cat6, fibre optique.",
-    "descEn": "Certified network infrastructure, structured cabling FTP Cat6, fiber optic."
+    "cta": "Planifier un audit réseau →"
   },
   {
     "id": "cctv",
     "icon": "camera",
     "titleFr": "Vidéosurveillance (CCTV)",
-    "titleEn": "Video Surveillance (CCTV)",
     "descFr": "Caméras IP et analogiques HD. Partenaire certifié HIKVISION.",
-    "descEn": "IP and analog HD cameras. HIKVISION certified partner."
+    "cta": "Demander un devis CCTV →"
   },
   {
     "id": "access",
     "icon": "lock",
     "titleFr": "Contrôle d'Accès",
-    "titleEn": "Access Control",
     "descFr": "Biométrie, badges RFID, gestion des accès pour entreprises.",
-    "descEn": "Biometrics, RFID badges, enterprise access management."
+    "cta": "Configurer un contrôle d'accès →"
   },
   {
     "id": "alarm",
     "icon": "bell",
     "titleFr": "Systèmes d'Alarme",
-    "titleEn": "Alarm Systems",
     "descFr": "Détection d'intrusion, alertes en temps réel, télésurveillance.",
-    "descEn": "Intrusion detection, real-time alerts, remote monitoring."
+    "cta": "Obtenir un devis alarme →"
   },
   {
     "id": "hardware",
     "icon": "desktop",
     "titleFr": "Matériel Informatique",
-    "titleEn": "IT Hardware",
     "descFr": "Fourniture d'équipements IT (PC, serveurs, onduleurs).",
-    "descEn": "IT equipment supply (PCs, servers, UPS)."
+    "cta": "Consulter nos équipements →"
   }
 ]

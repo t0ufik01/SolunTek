@@ -13,11 +13,6 @@ import '../css/pages/home.css';
 const _savedTheme = localStorage.getItem('soluntek-theme') || 'light';
 document.documentElement.setAttribute('data-theme', _savedTheme);
 
-// Apply saved language immediately
-const _savedLang = localStorage.getItem('soluntek-lang') || 'fr';
-document.documentElement.setAttribute('data-lang', _savedLang);
-document.documentElement.setAttribute('lang', _savedLang);
-
 import { initApp } from './core/init.js';
 
 document.addEventListener('DOMContentLoaded', () => {

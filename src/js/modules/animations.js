@@ -194,27 +194,6 @@ export function initAnimations() {
         });
     }
 
-    // ── 5. WHY TIMELINE PROGRESS ──
-    const connectors = document.querySelectorAll('.timeline-connector');
-    const nodes = document.querySelectorAll('.timeline-node');
-
-    if (connectors.length) {
-        ScrollTrigger.create({
-            trigger: '.why__timeline',
-            start: 'top 80%',
-            once: true,
-            onEnter: () => {
-                connectors.forEach((conn, i) => {
-                    setTimeout(() => {
-                        conn.classList.add('filled');
-                        if (nodes[i + 1]) nodes[i + 1].classList.add('active', 'passed');
-                    }, i * 400);
-                });
-                if (nodes[0]) nodes[0].classList.add('active', 'passed');
-            }
-        });
-    }
-
     // ── 6. HERO PARALLAX (Removed orb logic since HTML elements were removed) ──
 
     // ── 7. NAVBAR ACTIVE SECTION TRACKING ──

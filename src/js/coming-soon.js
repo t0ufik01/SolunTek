@@ -2,18 +2,12 @@ import '../css/base/variables.css';
 import '../css/base/reset.css';
 import '../css/base/global.css';
 import '../css/pages/coming-soon.css';
-import { initLang } from './modules/lang.js';
 
-// Apply saved theme & lang immediately
+// Apply saved theme immediately
 const savedTheme = localStorage.getItem('soluntek-theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
-const savedLang = localStorage.getItem('soluntek-lang') || 'fr';
-document.documentElement.setAttribute('data-lang', savedLang);
-document.documentElement.setAttribute('lang', savedLang);
-
 document.addEventListener('DOMContentLoaded', () => {
-    initLang();
     initStarfield();
 });
 

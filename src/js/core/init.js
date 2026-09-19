@@ -1,5 +1,4 @@
 import { initAnimations } from '../modules/animations.js';
-import { initLang } from '../modules/lang.js';
 import { initContactForm } from '../modules/contact.js';
 import { initCarousel } from '../modules/carousel.js';
 import { initTheme } from './theme.js';
@@ -7,7 +6,6 @@ import { initData } from '../modules/data.js';
 
 export function initApp() {
     initTheme();
-    initLang();
     runPreloader();
 }
 
