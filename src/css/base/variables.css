@@ -90,9 +90,9 @@
 [data-theme='dark'] {
     /* Base Backgrounds */
     --bg-base: #030712;                      /* أسود تقني مائل للزرقة العميقة جداً */
-    --bg-surface-1: #070e24;                 /* أزرق داكن هادئ مشتق من #0600AF */
+    --bg-surface-1: rgba(15, 23, 42, 0.5);   /* Semi-transparent for glassmorphism */
     --bg-surface-2: #0d1a3a;                 /* طبقة ثانية للبطاقات والتفاعل */
-    --card-bg: #081028;
+    --card-bg: rgba(15, 23, 42, 0.6);        /* Semi-transparent for glassmorphism */
     --section-alt: #050b1b;
     --navbar-bg: rgba(3, 7, 18, 0.85);       /* شبه شفاف مع Backdrop Filter */
     --footer-bg: #02040a;

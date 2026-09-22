@@ -11,20 +11,12 @@ export function initAnimations() {
         // Simple reveal without stagger or complex GSAP
         document
             .querySelectorAll(
-                '.reveal-up, .reveal-left, .reveal-right, .pillar-card, .stagger-item'
+                '.reveal-up, .reveal-left, .pillar-card, .stagger-item'
             )
             .forEach((el) => {
                 el.style.opacity = '1';
                 el.style.transform = 'translate(0, 0)';
             });
-
-        // Ensure stat counters reflect final values immediately
-        const statNums = document.querySelectorAll('.stat-card__num[data-count]');
-        statNums.forEach(el => {
-            const target = el.getAttribute('data-count');
-            const suffix = el.getAttribute('data-suffix') || '';
-            el.textContent = target + suffix;
-        });
 
         return; // Skip complex GSAP setup
     }
@@ -166,33 +158,8 @@ export function initAnimations() {
         });
     }
 
-    // ── 4. STATS COUNT-UP ──
-    const statNums = document.querySelectorAll('.stat-card__num[data-count]');
-    if (statNums.length) {
-        ScrollTrigger.create({
-            trigger: '.about__stats',
-            start: 'top 80%',
-            once: true,
-            onEnter: () => {
-                statNums.forEach((el) => {
-                    const target = parseInt(el.getAttribute('data-count'), 10);
-                    const suffix = el.getAttribute('data-suffix') || '';
-                    gsap.to(
-                        { val: 0 },
-                        {
-                            val: target,
-                            duration: 1.8,
-                            ease: 'power2.out',
-                            snap: { val: 1 },
-                            onUpdate() {
-                                el.textContent = Math.round(this.targets()[0].val) + suffix;
-                            }
-                        }
-                    );
-                });
-            }
-        });
-    }
+    // ── 4. STATS COUNT-UP — removed (stats block deleted) ──
+
 
     // ── 6. HERO PARALLAX (Removed orb logic since HTML elements were removed) ──
 
@@ -217,16 +184,19 @@ export function initAnimations() {
     }
 
     // ── 8. PILLAR CARDS REVEAL ──
+    // Initial state is set in CSS (opacity:0, translateY:40px).
+    // gsap.to() animates each card to the visible state when it enters viewport.
     ScrollTrigger.batch('.pillar-card', {
         onEnter: (els) =>
-            gsap.from(els, {
-                opacity: 0,
-                y: 40,
-                stagger: 0.1,
+            gsap.to(els, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.13,
                 duration: 0.65,
-                ease: 'power2.out'
+                ease: 'power2.out',
+                clearProps: 'transform'
             }),
-        start: 'top 85%',
+        start: 'top 88%',
         once: true
     });
 }

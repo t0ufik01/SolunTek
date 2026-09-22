@@ -45,6 +45,10 @@
 
 
 
+html {
+    overflow-x: hidden;
+}
+
 /* ---- Body ---- */
 body {
     font-family: var(--font-body);
@@ -71,8 +75,10 @@ body {
 /* DARK MODE */
 [data-theme='dark'] body {
     background-color: var(--bg-base);
-    background-image: radial-gradient(circle, rgba(74, 186, 255, 0.08) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image: 
+        linear-gradient(to right, rgba(74, 186, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(74, 186, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
 /* Hero section: add a soft radial glow on top of the dot grid */
@@ -139,6 +145,8 @@ h4,
 .display {
     font-family: var(--font-display);
     color: var(--text-primary);
+    /* balance line breaks on all screen sizes */
+    text-wrap: balance;
 }
 
 /* ---- Scrollbar ---- */
@@ -205,6 +213,7 @@ h4,
     line-height: 1.1;
     color: var(--text-primary);
     margin-bottom: 24px;
+    text-wrap: balance;
 }
 
 .section-header {
@@ -431,13 +440,20 @@ h4,
 }
 
 /* ---- Responsive ---- */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .section-padded {
-        padding-block: 80px;
+        padding-block: 64px;
     }
 
     .section-title {
-        font-size: clamp(24px, 7vw, 40px);
+        font-size: clamp(24px, 7vw, 36px);
+    }
+
+    /* Ensure touch targets are at least 48px tall */
+    .theme-toggle,
+    .navbar__hamburger {
+        min-width: 44px;
+        min-height: 44px;
     }
 }
 
